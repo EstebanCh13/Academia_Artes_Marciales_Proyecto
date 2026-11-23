@@ -1,0 +1,23 @@
+name: Crear tarea de desarrollo web
+
+on:
+  issues:
+    types: [closed]
+
+permissions:
+  issues: write
+
+jobs:
+  crear-tarea:
+    if: github.event.issue.title == 'Propuesta diseño'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Crear Desarrollo web
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Desarrollo web" \
+            --body "Tarea creada automáticamente al completar Propuesta diseño." \
+            --repo "${{ github.repository }}"
