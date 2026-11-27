@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Liga MMA Boyacá - Colombia</title>
+    <meta name="description"
+        content="Conoce la historia, misión, visión, objetivos, valores e información institucional de la Liga de Artes Marciales Mixtas de Boyacá.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/nosotros.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO PRINCIPAL Y BARRA DE NAVEGACIÓN COMPARTIDA -->
+    <header class="encabezado" id="encabezado">
+        <!-- Barra de navegación que inicia transparente y cambia al hacer scroll -->
+        <nav class="barra-navegacion" aria-label="Navegación principal">
+            <!-- Logotipo de la Liga que lleva al inicio -->
+            <a href="index.html" class="logo-navegacion">
+                <div class="logo-icono">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <div class="logo-texto">
+                    <span class="logo-titulo">LIGA MMA</span>
+                    <span class="logo-subtitulo">BOYACÁ · COLOMBIA</span>
+                </div>
+            </a>
+
+            <!-- Lista de enlaces principales del menú -->
+            <ul class="enlaces-navegacion" id="enlacesNavegacion">
+                <li><a href="index.html" class="enlace-nav">Inicio</a></li>
+                <li><a href="html/nosotros.html" class="enlace-nav activo">Nosotros</a></li>
+                <li><a href="index.html#sedes" class="enlace-nav">Sedes</a></li>
+                <li><a href="index.html#deportistas" class="enlace-nav">Deportistas</a></li>
+                <li><a href="index.html#eventos" class="enlace-nav">Eventos</a></li>
+                <li><a href="index.html#torneos" class="enlace-nav">Torneos</a></li>
+                <li><a href="index.html#novedades" class="enlace-nav">Novedades</a></li>
+                <li><a href="inscripciones.html" class="enlace-nav">Inscripciones</a></li>
+                <li><a href="index.html#profesores" class="enlace-nav">Profesores</a></li>
+            </ul>
+
+            <!-- Botón único de inicio de sesión y botón hamburguesa para móviles -->
+            <div class="acciones-navegacion">
+                <button type="button" class="boton-iniciar-sesion" id="botonLogin">
+                    <i class="fas fa-user"></i> Iniciar Sesión
+                </button>
+                <button type="button" class="boton-menu-movil" id="botonMenuMovil"
+                    aria-label="Abrir menú de navegación">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Barra tricolor de la bandera de Colombia debajo del menú -->
+        <div class="barra-colombia" aria-hidden="true">
+            <div class="franja-amarilla"></div>
+            <div class="franja-azul"></div>
+            <div class="franja-roja"></div>
+        </div>
+    </header>
+
+    <!-- MENÚ DESPLEGABLE PARA PANTALLAS DE CELULAR -->
+    <div class="menu-movil" id="menuMovil" aria-label="Menú móvil">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="index.html#sedes">Sedes</a>
+        <a href="index.html#deportistas">Deportistas</a>
+        <a href="index.html#eventos">Eventos</a>
+        <a href="index.html#torneos">Torneos</a>
+        <a href="index.html#novedades">Novedades</a>
+        <a href="inscripciones.html">Inscripciones</a>
+        <a href="index.html#profesores">Profesores</a>
+        <button type="button" class="boton-login-movil" id="botonLoginMovil">
+            <i class="fas fa-user"></i> Iniciar Sesión
+        </button>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL DE LA PÁGINA NOSOTROS -->
+    <main>
+
+        <!-- BANNER SUPERIOR DE LA PÁGINA NOSOTROS -->
+        <section class="banner-interno">
+            <div class="banner-superposicion" aria-hidden="true"></div>
+            <div class="contenedor banner-contenido">
+                <!-- Ruta de navegación para ubicar al visitante -->
+                <nav class="miga-pan" aria-label="Ruta de navegación">
+                    <a href="index.html">INICIO</a>
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    <span>NOSOTROS</span>
+                </nav>
+
+                <!-- Pequeña barra tricolor de la bandera de Colombia -->
+                <div class="insignia-colores" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <h1 class="banner-titulo">NOSOTROS</h1>
+                <p class="banner-subtitulo">
+                    Conoce la historia, el propósito y los valores de la Liga de MMA de Boyacá.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN NUESTRA HISTORIA Y LÍNEA DE TIEMPO -->
+        <section class="historia-seccion">
+            <div class="contenedor">
+                <div class="historia-cuadricula">
+                    <!-- Columna izquierda: relato institucional y fotografía -->
+                    <div class="historia-contenido" data-animar="derecha">
+                        <span class="subtitulo-seccion">NUESTRA HISTORIA</span>
+                        <h2 class="titulo-seccion">NACIMOS EN EL <span>TATAMI</span></h2>
+                        <p class="historia-texto">
+                            La Liga nació en Tunja en 2012 de la mano de maestros que querían darle a Boyacá un espacio
+                            serio para entrenar y competir en artes marciales mixtas.
+                        </p>
+                        <p class="historia-texto">
+                            Hoy reúne a cientos de deportistas en tres sedes oficiales y organiza eventos y torneos que
+                            ponen el nombre del departamento en el mapa nacional.
+                        </p>
+
+                        <!-- Recuadro de fotografía principal de entrenamiento -->
+                        <div class="historia-foto">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-hand-fist"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna derecha: tarjeta con la línea de tiempo cronológica -->
+                    <aside class="tarjeta-linea-tiempo" data-animar="izquierda" aria-label="Línea de tiempo de la liga">
+                        <div class="linea-tiempo-cabecera">
+                            <i class="fas fa-code-branch"></i>
+                            <h3>LÍNEA DE TIEMPO</h3>
+                        </div>
+
+                        <div class="linea-tiempo-lista">
+                            <div class="hito-item">
+                                <span class="hito-punto" aria-hidden="true"></span>
+                                <span class="hito-anio">2012</span>
+                                <h4 class="hito-titulo">Fundación en Tunja</h4>
+                                <p class="hito-descripcion">Un grupo de maestros funda la Liga con 40 deportistas.</p>
+                            </div>
+
+                            <div class="hito-item">
+                                <span class="hito-punto" aria-hidden="true"></span>
+                                <span class="hito-anio">2016</span>
+                                <h4 class="hito-titulo">Primer torneo departamental</h4>
+                                <p class="hito-descripcion">Participan 8 municipios de Boyacá.</p>
+                            </div>
+
+                            <div class="hito-item">
+                                <span class="hito-punto" aria-hidden="true"></span>
+                                <span class="hito-anio">2019</span>
+                                <h4 class="hito-titulo">Nuevas sedes</h4>
+                                <p class="hito-descripcion">Abren las academias afiliadas en Duitama y Sogamoso.</p>
+                            </div>
+
+                            <div class="hito-item">
+                                <span class="hito-punto" aria-hidden="true"></span>
+                                <span class="hito-anio">2023</span>
+                                <h4 class="hito-titulo">Convenios educativos</h4>
+                                <p class="hito-descripcion">Alianzas con colegios para formación juvenil.</p>
+                            </div>
+
+                            <div class="hito-item">
+                                <span class="hito-punto" aria-hidden="true"></span>
+                                <span class="hito-anio">2026</span>
+                                <h4 class="hito-titulo">+450 deportistas</h4>
+                                <p class="hito-descripcion">Tres sedes consolidadas y un calendario oficial anual.</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN MISIÓN Y VISIÓN -->
+        <section class="mision-vision-seccion">
+            <div class="contenedor">
+                <div class="mision-vision-cuadricula">
+                    <!-- Tarjeta verde de Misión -->
+                    <article class="tarjeta-proposito tarjeta-mision" data-animar="subir" data-retraso="1">
+                        <div class="insignia-colores" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <h3>MISIÓN</h3>
+                        <p>
+                            Formar, organizar y representar a los deportistas de artes marciales mixtas de Boyacá,
+                            promoviendo la disciplina, el respeto y el alto rendimiento.
+                        </p>
+                        <i class="fas fa-flag icono-marca-agua" aria-hidden="true"></i>
+                    </article>
+
+                    <!-- Tarjeta oscura de Visión -->
+                    <article class="tarjeta-proposito tarjeta-vision" data-animar="subir" data-retraso="2">
+                        <div class="insignia-colores" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <h3>VISIÓN</h3>
+                        <p>
+                            Ser en 2030 la liga de MMA de referencia en Colombia por la calidad de sus deportistas, su
+                            organización y su impacto social.
+                        </p>
+                        <i class="fas fa-eye icono-marca-agua" aria-hidden="true"></i>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN OBJETIVOS INSTITUCIONALES -->
+        <section class="objetivos-seccion">
+            <div class="contenedor">
+                <div data-animar="subir">
+                    <span class="subtitulo-seccion">HACIA DÓNDE VAMOS</span>
+                    <h2 class="titulo-seccion">OBJETIVOS INSTITUCIONALES</h2>
+                </div>
+
+                <!-- Cuatro objetivos estratégicos numerados -->
+                <div class="objetivos-cuadricula">
+                    <article class="tarjeta-objetivo" data-animar="subir" data-retraso="1">
+                        <span class="objetivo-numero">01</span>
+                        <h3 class="objetivo-titulo">FORMAR DEPORTISTAS</h3>
+                        <p class="objetivo-texto">Entrenamiento técnico por niveles para menores y adultos.</p>
+                    </article>
+
+                    <article class="tarjeta-objetivo" data-animar="subir" data-retraso="2">
+                        <span class="objetivo-numero">02</span>
+                        <h3 class="objetivo-titulo">PROMOVER LA COMPETENCIA</h3>
+                        <p class="objetivo-texto">Eventos y torneos con reglamento y arbitraje avalado.</p>
+                    </article>
+
+                    <article class="tarjeta-objetivo" data-animar="subir" data-retraso="3">
+                        <span class="objetivo-numero">03</span>
+                        <h3 class="objetivo-titulo">DESCENTRALIZAR EL MMA</h3>
+                        <p class="objetivo-texto">Llevar el deporte a todas las provincias del departamento.</p>
+                    </article>
+
+                    <article class="tarjeta-objetivo" data-animar="subir" data-retraso="4">
+                        <span class="objetivo-numero">04</span>
+                        <h3 class="objetivo-titulo">EDUCAR EN VALORES</h3>
+                        <p class="objetivo-texto">Disciplina, respeto y vida saludable dentro y fuera del tatami.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN VALORES DEPORTIVOS -->
+        <section class="valores-seccion">
+            <div class="contenedor">
+                <div data-animar="subir">
+                    <span class="subtitulo-seccion">LO QUE NOS DEFINE</span>
+                    <h2 class="titulo-seccion">VALORES DEPORTIVOS</h2>
+                </div>
+
+                <!-- Cuadrícula de seis valores con icono verde -->
+                <div class="valores-cuadricula">
+                    <article class="tarjeta-valor" data-animar="subir" data-retraso="1">
+                        <div class="valor-icono"><i class="fas fa-bullseye"></i></div>
+                        <div class="valor-contenido">
+                            <h3>DISCIPLINA</h3>
+                            <p>Constancia diaria como base del rendimiento.</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-valor" data-animar="subir" data-retraso="2">
+                        <div class="valor-icono"><i class="fas fa-handshake"></i></div>
+                        <div class="valor-contenido">
+                            <h3>RESPETO</h3>
+                            <p>Hacia el rival, el maestro y el árbitro.</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-valor" data-animar="subir" data-retraso="3">
+                        <div class="valor-icono"><i class="fas fa-award"></i></div>
+                        <div class="valor-contenido">
+                            <h3>HONOR</h3>
+                            <p>Competir con integridad en cada combate.</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-valor" data-animar="subir" data-retraso="4">
+                        <div class="valor-icono"><i class="fas fa-mountain"></i></div>
+                        <div class="valor-contenido">
+                            <h3>PERSEVERANCIA</h3>
+                            <p>Levantarse después de cada caída.</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-valor" data-animar="subir" data-retraso="5">
+                        <div class="valor-icono"><i class="fas fa-users"></i></div>
+                        <div class="valor-contenido">
+                            <h3>COMPAÑERISMO</h3>
+                            <p>Se entrena en equipo, se crece en comunidad.</p>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-valor" data-animar="subir" data-retraso="6">
+                        <div class="valor-icono"><i class="fas fa-scale-balanced"></i></div>
+                        <div class="valor-contenido">
+                            <h3>JUEGO LIMPIO</h3>
+                            <p>Reglas claras y seguridad ante todo.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN ORGANIZACIÓN E INFORMACIÓN GENERAL -->
+        <section class="organizacion-seccion">
+            <div class="contenedor">
+                <div class="organizacion-cuadricula">
+                    <!-- Columna izquierda: descripción institucional y botón de contacto -->
+                    <div class="organizacion-intro" data-animar="derecha">
+                        <span class="subtitulo-seccion">ORGANIZACIÓN</span>
+                        <h2 class="titulo-seccion">INFORMACIÓN GENERAL</h2>
+                        <p>
+                            Entidad deportiva sin ánimo de lucro, afiliada a la federación nacional y reconocida por el
+                            ente deportivo departamental.
+                        </p>
+                        <a href="https://wa.me/573104567890" target="_blank" rel="noopener noreferrer"
+                            class="boton boton-primario">
+                            CONTÁCTANOS <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Columna derecha: ficha técnica legal de la liga -->
+                    <div class="ficha-institucional" data-animar="izquierda">
+                        <div class="ficha-fila">
+                            <span class="ficha-etiqueta">Nombre legal</span>
+                            <span class="ficha-valor">Liga de Artes Marciales Mixtas de Boyacá</span>
+                        </div>
+                        <div class="ficha-fila">
+                            <span class="ficha-etiqueta">NIT</span>
+                            <span class="ficha-valor">900.456.789-1</span>
+                        </div>
+                        <div class="ficha-fila">
+                            <span class="ficha-etiqueta">Año de fundación</span>
+                            <span class="ficha-valor">2012</span>
+                        </div>
+                        <div class="ficha-fila">
+                            <span class="ficha-etiqueta">Domicilio principal</span>
+                            <span class="ficha-valor">Cra. 10 #20-45, Tunja</span>
+                        </div>
+                        <div class="ficha-fila">
+                            <span class="ficha-etiqueta">Presidente</span>
+                            <span class="ficha-valor">Ricardo Pinzón Alarcón</span>
+                        </div>
+                        <div class="ficha-fila">
+                            <span class="ficha-etiqueta">Sedes activas</span>
+                            <span class="ficha-valor">3</span>
+                        </div>
+                        <div class="ficha-fila">
+                            <span class="ficha-etiqueta">Correo</span>
+                            <span class="ficha-valor">contacto@ligammaboyaca.co</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA COMPARTIDO CON PATROCINADORES OFICIALES -->
+    <footer class="pie-pagina" id="piePagina">
+        <!-- Barra tricolor de la bandera de Colombia en la parte superior del pie -->
+        <div class="barra-colombia" aria-hidden="true">
+            <div class="franja-amarilla"></div>
+            <div class="franja-azul"></div>
+            <div class="franja-roja"></div>
+        </div>
+
+        <div class="contenedor">
+            <!-- Cuadrícula principal de 4 columnas del pie de página -->
+            <div class="pie-contenido">
+                <!-- Columna 1: Marca, descripción corta y redes sociales -->
+                <div class="pie-marca">
+                    <a href="index.html" class="pie-logo">
+                        <div class="pie-logo-icono">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <span class="pie-logo-texto">LIGA MMA BOYACÁ</span>
+                    </a>
+                    <p class="pie-descripcion">
+                        Liga de Artes Marciales Mixtas de Boyacá. Fuerza, disciplina y respeto dentro y fuera del
+                        octágono.
+                    </p>
+                    <div class="pie-redes">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/573104567890" target="_blank" rel="noopener noreferrer"
+                            aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Enlaces de la Liga -->
+                <div class="pie-columna">
+                    <h4>LA LIGA</h4>
+                    <ul>
+                        <li><a href="/html/nosotros.html">Nosotros</a></li>
+                        <li><a href="index.html#sedes">Sedes</a></li>
+                        <li><a href="index.html#profesores">Profesores</a></li>
+                        <li><a href="inscripciones.html">Inscripciones</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Enlaces de Competencia -->
+                <div class="pie-columna">
+                    <h4>COMPETENCIA</h4>
+                    <ul>
+                        <li><a href="index.html#eventos">Eventos</a></li>
+                        <li><a href="index.html#torneos">Torneos</a></li>
+                        <li><a href="index.html#deportistas">Deportistas destacados</a></li>
+                        <li><a href="index.html#novedades">Novedades</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Datos de Contacto -->
+                <div class="pie-columna">
+                    <h4>CONTACTO</h4>
+                    <div class="pie-contacto-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Cra. 10 #20-45, Tunja, Boyacá</span>
+                    </div>
+                    <div class="pie-contacto-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+57 310 456 7890</span>
+                    </div>
+                    <div class="pie-contacto-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contacto@ligammaboyaca.co</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Apartado dedicado para los Patrocinadores Oficiales de la Liga -->
+            <div class="pie-patrocinadores">
+                <h4 class="patrocinadores-titulo">PATROCINADORES OFICIALES</h4>
+                <div class="patrocinadores-lista">
+                    <div class="patrocinador-espacio">LOGO PATROCINADOR 1</div>
+                    <div class="patrocinador-espacio">LOGO PATROCINADOR 2</div>
+                    <div class="patrocinador-espacio">LOGO PATROCINADOR 3</div>
+                </div>
+            </div>
+
+            <!-- Barra inferior con derechos de autor y enlaces legales -->
+            <div class="pie-inferior">
+                <p>&copy; 2026 Liga de Artes Marciales Mixtas de Boyacá. Todos los derechos reservados.</p>
+                <p>
+                    <a href="#">Términos y condiciones</a> · <a href="#">Política de privacidad</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VENTANA MODAL DE INICIO DE SESIÓN Y RECUPERACIÓN (SIN CREAR CUENTA) -->
+    <div class="modal-superposicion" id="modalLogin" role="dialog" aria-modal="true" aria-labelledby="tituloModalLogin">
+        <div class="modal-tarjeta">
+            <button type="button" class="modal-cerrar" id="cerrarModal" aria-label="Cerrar ventana">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="modal-logo">
+                <div class="modal-logo-icono">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <span class="modal-logo-texto">LIGA MMA BOYACÁ</span>
+            </div>
+
+            <!-- Vista para iniciar sesión -->
+            <div class="modal-vista activa" id="vistaLogin">
+                <h2 class="modal-titulo" id="tituloModalLogin">Iniciar Sesión</h2>
+                <form class="modal-formulario" id="formularioLogin" novalidate>
+                    <div class="grupo-formulario">
+                        <label for="correoLogin">Correo electrónico</label>
+                        <input type="email" id="correoLogin" name="correoLogin" placeholder="usuario@ligammaboyaca.co"
+                            required>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="claveLogin">Contraseña</label>
+                        <input type="password" id="claveLogin" name="claveLogin" placeholder="Tu contraseña" required>
+                    </div>
+                    <button type="submit" class="boton-enviar-formulario">Iniciar Sesión</button>
+                </form>
+                <div class="modal-enlace-pie">
+                    <a href="#" id="mostrarRecuperar">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+
+            <!-- Vista para recuperar contraseña dentro de iniciar sesión -->
+            <div class="modal-vista" id="vistaRecuperar">
+                <h2 class="modal-titulo">Recuperar Contraseña</h2>
+                <form class="modal-formulario" id="formularioRecuperar" novalidate>
+                    <div class="grupo-formulario">
+                        <label for="correoRecuperar">Correo electrónico registrado</label>
+                        <input type="email" id="correoRecuperar" name="correoRecuperar"
+                            placeholder="usuario@ligammaboyaca.co" required>
+                    </div>
+                    <button type="submit" class="boton-enviar-formulario">Enviar enlace de recuperación</button>
+                </form>
+                <div class="modal-enlace-pie">
+                    <button type="button" class="boton-volver-login" id="mostrarLogin">
+                        <i class="fas fa-arrow-left"></i> Volver a iniciar sesión
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE PARA VOLVER ARRIBA -->
+    <button type="button" class="boton-subir" id="botonSubir" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Archivo JavaScript global compartido entre todas las páginas -->
+    <script src="js/global.js"></script>
+</body>
+
+</html>

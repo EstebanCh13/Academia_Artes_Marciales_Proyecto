@@ -1,0 +1,987 @@
+/* Reinicio básico para que todos los navegadores muestren los márgenes iguales */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Desplazamiento suave al hacer clic en cualquier enlace interno */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Estilos generales del cuerpo de la página: fuente, color y fondo claro */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #161b22;
+    background-color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Contenedor centrado para que el contenido no se pegue a los bordes */
+.contenedor {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Subtítulo pequeño con línea verde que aparece encima de cada título de sección */
+.subtitulo-seccion {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #2E7D32;
+    margin-bottom: 10px;
+}
+
+/* Línea decorativa verde antes del subtítulo */
+.subtitulo-seccion::before {
+    content: '';
+    display: inline-block;
+    width: 36px;
+    height: 3px;
+    background: #2E7D32;
+}
+
+/* Título principal de cada sección en fuente deportiva Oswald */
+.titulo-seccion {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 18px;
+    color: #161b22;
+}
+
+/* Palabra resaltada en verde dentro de un título */
+.titulo-seccion span {
+    color: #2E7D32;
+}
+
+/* Estilo base para todos los botones principales */
+.boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Botón verde principal con efecto de elevación al pasar el cursor */
+.boton-primario {
+    background: #2E7D32;
+    color: #ffffff;
+}
+
+/* Cambio de color y sombra cuando el usuario pasa el cursor por el botón primario */
+.boton-primario:hover {
+    background: #1b5e20;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.35);
+}
+
+/* Enlace de texto con flecha animada */
+.enlace-flecha {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #161b22;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Movimiento de la flecha y cambio a verde al pasar el cursor */
+.enlace-flecha:hover {
+    color: #2E7D32;
+    gap: 12px;
+}
+
+/* Variante clara del enlace con flecha para secciones de fondo oscuro */
+.enlace-flecha-claro {
+    color: #ffffff;
+}
+
+/* Color amarillo Colombia al pasar el cursor en enlaces claros */
+.enlace-flecha-claro:hover {
+    color: #FCD116;
+}
+
+/* Barra tricolor de la bandera de Colombia (50% amarillo, 25% azul, 25% rojo) */
+.barra-colombia {
+    display: flex;
+    height: 4px;
+    width: 100%;
+}
+
+/* Franja amarilla de la bandera de Colombia */
+.barra-colombia .franja-amarilla {
+    flex: 2;
+    background: #FCD116;
+}
+
+/* Franja azul de la bandera de Colombia */
+.barra-colombia .franja-azul {
+    flex: 1;
+    background: #003893;
+}
+
+/* Franja roja de la bandera de Colombia */
+.barra-colombia .franja-roja {
+    flex: 1;
+    background: #CE1126;
+}
+
+/* Encabezado fijo en la parte superior de la pantalla */
+.encabezado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Barra de navegación inicialmente transparente sobre las portadas oscuras */
+.barra-navegacion {
+    background: transparent;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+    transition: background-color 0.35s ease, height 0.35s ease;
+}
+
+/* Estado normal de la barra cuando el usuario baja por la página */
+.encabezado.desplazado .barra-navegacion {
+    background: rgba(16, 36, 24, 0.97);
+    height: 70px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.28);
+}
+
+/* Contenedor del logo y nombre de la liga en el menú */
+.logo-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Caja cuadrada del icono del escudo en el logo */
+.logo-icono {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    color: #FCD116;
+}
+
+/* Columna de texto del logotipo */
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Título principal del logo */
+.logo-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+    color: #ffffff;
+}
+
+/* Subtítulo regional debajo del título del logo */
+.logo-subtitulo {
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+    margin-top: 3px;
+}
+
+/* Lista horizontal de enlaces del menú */
+.enlaces-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    list-style: none;
+}
+
+/* Estilo individual de cada enlace del menú superior */
+.enlaces-navegacion a {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Resaltado cuando el usuario pasa el cursor o está en esa sección */
+.enlaces-navegacion a:hover,
+.enlaces-navegacion a.activo {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Línea inferior amarilla para el enlace activo */
+.enlaces-navegacion a.activo::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background: #FCD116;
+    border-radius: 2px;
+}
+
+/* Zona derecha de la barra con el botón único de Iniciar Sesión */
+.acciones-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Botón único de Iniciar Sesión en la barra de navegación */
+.boton-iniciar-sesion {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    background: #2E7D32;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Efecto al pasar el cursor sobre el botón Iniciar Sesión */
+.boton-iniciar-sesion:hover {
+    background: #1b5e20;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(46, 125, 50, 0.45);
+}
+
+/* Botón de tres líneas para abrir el menú en celulares */
+.boton-menu-movil {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+}
+
+/* Cada una de las tres rayas del botón móvil */
+.boton-menu-movil span {
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Transformación de la primera raya en X cuando el menú móvil está abierto */
+.boton-menu-movil.activo span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+/* Oculta la raya del medio cuando el menú móvil está abierto */
+.boton-menu-movil.activo span:nth-child(2) {
+    opacity: 0;
+}
+
+/* Transformación de la tercera raya en X cuando el menú móvil está abierto */
+.boton-menu-movil.activo span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Menú de pantalla completa para dispositivos móviles */
+.menu-movil {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 22, 16, 0.98);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(18px);
+}
+
+/* Muestra el menú móvil cuando está activo */
+.menu-movil.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Enlaces del menú móvil */
+.menu-movil a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    padding: 8px 20px;
+    transition: color 0.25s ease;
+}
+
+/* Resalta en verde los enlaces del menú móvil */
+.menu-movil a:hover {
+    color: #4caf50;
+}
+
+/* Botón de iniciar sesión dentro del menú móvil */
+.menu-movil .boton-login-movil {
+    margin-top: 18px;
+    padding: 14px 36px;
+    background: #2E7D32;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+/* Pie de página clásico de 4 columnas con apartado de Patrocinadores Oficiales */
+.pie-pagina {
+    background: #144d29;
+    color: #ffffff;
+}
+
+/* Cuadrícula principal del pie de página en 4 columnas */
+.pie-contenido {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    padding: 56px 0 40px;
+}
+
+/* Enlace del logotipo dentro del pie de página */
+.pie-marca .pie-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
+
+/* Caja oscura con el icono amarillo del escudo en el pie */
+.pie-marca .pie-logo-icono {
+    width: 42px;
+    height: 42px;
+    background: #0d1210;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #FCD116;
+}
+
+/* Nombre de la liga en el pie de página */
+.pie-marca .pie-logo-texto {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+/* Descripción corta debajo del logo en el pie */
+.pie-marca .pie-descripcion {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Fila de botones sociales en la primera columna del pie */
+.pie-redes {
+    display: flex;
+    gap: 10px;
+}
+
+/* Botón cuadrado redondeado de red social */
+.pie-redes a {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* Resalta en amarillo Colombia al pasar el cursor por las redes del pie */
+.pie-redes a:hover {
+    background: #FCD116;
+    color: #161b22;
+    border-color: #FCD116;
+}
+
+/* Título de cada columna de enlaces en el pie */
+.pie-columna h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: #ffffff;
+    margin-bottom: 18px;
+}
+
+/* Lista vertical de enlaces en el pie */
+.pie-columna ul {
+    list-style: none;
+}
+
+/* Separación vertical entre enlaces del pie */
+.pie-columna ul li {
+    margin-bottom: 10px;
+}
+
+/* Estilo de los enlaces dentro de las columnas del pie */
+.pie-columna ul li a {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+/* Color amarillo al pasar el cursor sobre los enlaces del pie */
+.pie-columna ul li a:hover {
+    color: #FCD116;
+}
+
+/* Fila individual de dirección, teléfono o correo en el pie */
+.pie-contacto-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+/* Iconos amarillos en la columna de contacto */
+.pie-contacto-item i {
+    color: #FCD116;
+    margin-top: 3px;
+    width: 16px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* Texto de contacto en el pie */
+.pie-contacto-item span {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.4;
+}
+
+/* Franja dedicada para mostrar los logos de los Patrocinadores Oficiales */
+.pie-patrocinadores {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 28px 0;
+}
+
+/* Título gris claro de Patrocinadores Oficiales */
+.patrocinadores-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.68);
+    margin-bottom: 18px;
+}
+
+/* Fila horizontal para ubicar los logotipos de los patrocinadores */
+.patrocinadores-lista {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+/* Espacio limpio reservado para cada logo de patrocinador */
+.patrocinador-espacio {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 10px 18px;
+    border: 1px dashed rgba(255, 255, 255, 0.28);
+    border-radius: 8px;
+}
+
+/* Franja inferior con derechos de autor y políticas */
+.pie-inferior {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Texto legal de la franja inferior */
+.pie-inferior p {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Enlaces legales de la franja inferior */
+.pie-inferior a {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+/* Color amarillo al pasar el cursor sobre los enlaces legales */
+.pie-inferior a:hover {
+    color: #FCD116;
+}
+
+/* Fondo oscuro detrás de la ventana modal de inicio de sesión */
+.modal-superposicion {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Muestra la ventana modal cuando tiene la clase activa */
+.modal-superposicion.activa {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tarjeta blanca centrada de la ventana modal */
+.modal-tarjeta {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Animación de entrada de la tarjeta modal */
+.modal-superposicion.activa .modal-tarjeta {
+    transform: translateY(0);
+}
+
+/* Botón X para cerrar el modal */
+.modal-cerrar {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #4a5568;
+    transition: all 0.25s ease;
+}
+
+/* Cambio de color en el botón X al pasar el cursor */
+.modal-cerrar:hover {
+    background: #e2e8f0;
+    color: #161b22;
+}
+
+/* Logo centrado arriba del formulario modal */
+.modal-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+/* Icono del logo dentro del modal */
+.modal-logo .modal-logo-icono {
+    width: 42px;
+    height: 42px;
+    background: #161b22;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #FCD116;
+}
+
+/* Texto del logo dentro del modal */
+.modal-logo .modal-logo-texto {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #161b22;
+    letter-spacing: 1px;
+}
+
+/* Título principal del modal */
+.modal-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: #161b22;
+    margin-bottom: 22px;
+}
+
+/* Oculta por defecto las vistas internas del modal */
+.modal-vista {
+    display: none;
+}
+
+/* Muestra únicamente la vista activa del modal */
+.modal-vista.activa {
+    display: block;
+}
+
+/* Espaciado entre cada campo de los formularios */
+.grupo-formulario {
+    margin-bottom: 18px;
+}
+
+/* Etiqueta encima de cada caja de texto */
+.grupo-formulario label {
+    display: block;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #4a5568;
+    margin-bottom: 6px;
+}
+
+/* Estilo de cajas de texto en los formularios */
+.grupo-formulario input {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background: #fafafa;
+    color: #161b22;
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+/* Borde verde cuando el usuario hace clic dentro de un campo */
+.grupo-formulario input:focus {
+    border-color: #2E7D32;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
+}
+
+/* Borde rojo cuando falta un campo obligatorio */
+.grupo-formulario input.error {
+    border-color: #CE1126;
+}
+
+/* Botón ancho para enviar el formulario modal */
+.boton-enviar-formulario {
+    width: 100%;
+    padding: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #2E7D32;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 6px;
+}
+
+/* Efecto hover del botón de enviar formulario */
+.boton-enviar-formulario:hover {
+    background: #1b5e20;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.35);
+}
+
+/* Enlace inferior dentro del modal para ir a recuperar contraseña */
+.modal-enlace-pie {
+    text-align: center;
+    margin-top: 16px;
+}
+
+/* Estilo del enlace de recuperar contraseña */
+.modal-enlace-pie a {
+    font-size: 0.82rem;
+    color: #2E7D32;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Subrayado al pasar el cursor en el enlace de recuperación */
+.modal-enlace-pie a:hover {
+    text-decoration: underline;
+}
+
+/* Botón de texto para regresar desde recuperación a iniciar sesión */
+.boton-volver-login {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: #4a5568;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/* Color verde al pasar el cursor sobre volver a iniciar sesión */
+.boton-volver-login:hover {
+    color: #2E7D32;
+}
+
+/* Botón flotante para volver al inicio de la página */
+.boton-subir {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 46px;
+    height: 46px;
+    background: #2E7D32;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(46, 125, 50, 0.4);
+}
+
+/* Muestra el botón flotante cuando el usuario baja más de 500 píxeles */
+.boton-subir.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Efecto hover del botón para subir */
+.boton-subir:hover {
+    background: #1b5e20;
+    transform: translateY(-3px);
+}
+
+/* Estado inicial oculto para los elementos que se animan al entrar en pantalla */
+[data-animar] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Estado visible una vez que el elemento aparece en pantalla */
+[data-animar].animado {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación desde la izquierda */
+[data-animar="derecha"] {
+    transform: translateX(-28px);
+}
+
+/* Posición final de la animación desde la izquierda */
+[data-animar="derecha"].animado {
+    transform: translateX(0);
+}
+
+/* Animación desde la derecha */
+[data-animar="izquierda"] {
+    transform: translateX(28px);
+}
+
+/* Posición final de la animación desde la derecha */
+[data-animar="izquierda"].animado {
+    transform: translateX(0);
+}
+
+/* Animación de escala suave */
+[data-animar="escala"] {
+    transform: scale(0.95);
+}
+
+/* Posición final de la animación de escala */
+[data-animar="escala"].animado {
+    transform: scale(1);
+}
+
+/* Retrasos escalonados para que las tarjetas aparezcan una tras otra */
+[data-retraso="1"] {
+    transition-delay: 0.08s;
+}
+
+[data-retraso="2"] {
+    transition-delay: 0.16s;
+}
+
+[data-retraso="3"] {
+    transition-delay: 0.24s;
+}
+
+[data-retraso="4"] {
+    transition-delay: 0.32s;
+}
+
+[data-retraso="5"] {
+    transition-delay: 0.40s;
+}
+
+[data-retraso="6"] {
+    transition-delay: 0.48s;
+}
+
+/* Estilo base para los espacios reservados donde irán las fotografías reales */
+.imagen-marcador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.18);
+    font-size: 2rem;
+}
+
+/* Adaptación de navegación y pie de página en tabletas */
+@media (max-width: 1100px) {
+
+    /* Oculta el menú horizontal en tabletas para mostrar el botón móvil */
+    .enlaces-navegacion {
+        display: none;
+    }
+
+    /* Muestra el botón de menú móvil */
+    .boton-menu-movil {
+        display: flex;
+    }
+
+    /* Ajusta el pie de página a dos columnas */
+    .pie-contenido {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Adaptación de navegación y pie de página en celulares */
+@media (max-width: 768px) {
+
+    /* Reduce el tamaño de títulos en celulares */
+    .titulo-seccion {
+        font-size: 2.1rem;
+    }
+
+    /* Pasa el pie de página a una sola columna */
+    .pie-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    /* Centra la franja legal del pie en celular */
+    .pie-inferior {
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Reduce el relleno del menú superior en celular */
+    .barra-navegacion {
+        padding: 0 18px;
+    }
+}

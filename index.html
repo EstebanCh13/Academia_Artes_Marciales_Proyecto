@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga MMA Boyacá - Colombia | Liga de Artes Marciales Mixtas</title>
+    <meta name="description"
+        content="Liga de Artes Marciales Mixtas de Boyacá. Fuerza, disciplina y respeto dentro y fuera del octágono.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/inicio.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO PRINCIPAL Y BARRA DE NAVEGACIÓN -->
+    <header class="encabezado" id="encabezado">
+        <!-- Barra de navegación que inicia transparente y cambia al hacer scroll -->
+        <nav class="barra-navegacion" aria-label="Navegación principal">
+            <!-- Logotipo de la Liga que lleva al inicio -->
+            <a href="#inicio" class="logo-navegacion">
+                <div class="logo-icono">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <div class="logo-texto">
+                    <span class="logo-titulo">LIGA MMA</span>
+                    <span class="logo-subtitulo">BOYACÁ · COLOMBIA</span>
+                </div>
+            </a>
+
+            <!-- Lista de enlaces principales del menú -->
+            <ul class="enlaces-navegacion" id="enlacesNavegacion">
+                <li><a href="#inicio" class="enlace-nav activo">Inicio</a></li>
+                <li><a href="nosotros.html" class="enlace-nav">Nosotros</a></li>
+                <li><a href="#sedes" class="enlace-nav">Sedes</a></li>
+                <li><a href="#deportistas" class="enlace-nav">Deportistas</a></li>
+                <li><a href="#eventos" class="enlace-nav">Eventos</a></li>
+                <li><a href="#torneos" class="enlace-nav">Torneos</a></li>
+                <li><a href="#novedades" class="enlace-nav">Novedades</a></li>
+                <li><a href="inscripciones.html" class="enlace-nav">Inscripciones</a></li>
+                <li><a href="#profesores" class="enlace-nav">Profesores</a></li>
+            </ul>
+
+            <!-- Botón único de inicio de sesión y botón hamburguesa para móviles -->
+            <div class="acciones-navegacion">
+                <button type="button" class="boton-iniciar-sesion" id="botonLogin">
+                    <i class="fas fa-user"></i> Iniciar Sesión
+                </button>
+                <button type="button" class="boton-menu-movil" id="botonMenuMovil"
+                    aria-label="Abrir menú de navegación">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Barra tricolor de la bandera de Colombia debajo del menú -->
+        <div class="barra-colombia" aria-hidden="true">
+            <div class="franja-amarilla"></div>
+            <div class="franja-azul"></div>
+            <div class="franja-roja"></div>
+        </div>
+    </header>
+
+    <!-- MENÚ DESPLEGABLE PARA PANTALLAS DE CELULAR -->
+    <div class="menu-movil" id="menuMovil" aria-label="Menú móvil">
+        <a href="#inicio">Inicio</a>
+        <a href="html/nosotros.html">Nosotros</a>
+        <a href="#sedes">Sedes</a>
+        <a href="#deportistas">Deportistas</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#torneos">Torneos</a>
+        <a href="#novedades">Novedades</a>
+        <a href="inscripciones.html">Inscripciones</a>
+        <a href="#profesores">Profesores</a>
+        <button type="button" class="boton-login-movil" id="botonLoginMovil">
+            <i class="fas fa-user"></i> Iniciar Sesión
+        </button>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL DE TODA LA PÁGINA -->
+    <main>
+
+        <!-- SECCIÓN INICIO (PORTADA AUTOMÁTICA + TABLERO DE CUENTA REGRESIVA) -->
+        <section class="portada" id="inicio">
+            <!-- Capas de fondo que cambian automáticamente en cada diapositiva -->
+            <div class="portada-diapositivas" id="portadaDiapositivas" aria-hidden="true">
+                <div class="diapositiva diapositiva-1 activa"></div>
+                <div class="diapositiva diapositiva-2"></div>
+                <div class="diapositiva diapositiva-3"></div>
+            </div>
+
+            <!-- Capa oscura suave para que las letras blancas siempre se lean bien -->
+            <div class="portada-superposicion" aria-hidden="true"></div>
+
+            <!-- Contenedor principal de la portada -->
+            <div class="contenedor portada-contenedor">
+                <!-- Columna izquierda con el mensaje principal y botón de inscripción -->
+                <div class="portada-contenido">
+                    <!-- Etiqueta superior con los tres colores de Colombia -->
+                    <div class="portada-insignia">
+                        <div class="insignia-colores" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="insignia-texto" id="portadaEtiqueta">TEMPORADA 2026 · INSCRIPCIONES ABIERTAS</span>
+                    </div>
+
+                    <!-- Título principal de la portada que cambia con cada diapositiva -->
+                    <h1 class="portada-titulo" id="portadaTitulo">
+                        FORJA TU <span class="resaltado">DISCIPLINA</span>.<br>
+                        COMPITE EN BOYACÁ.
+                    </h1>
+
+                    <!-- Descripción corta de la liga -->
+                    <p class="portada-descripcion" id="portadaDescripcion">
+                        La Liga de Artes Marciales Mixtas de Boyacá une a niños, jóvenes y adultos que entrenan con
+                        respeto, fuerza y pasión para llegar al octágono.
+                    </p>
+
+                    <!-- Único botón de acción en la portada -->
+                    <div class="portada-botones">
+                        <a href="#inscripciones" class="boton boton-primario">
+                            INSCRÍBETE AHORA <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recuadro en la parte inferior derecha con el evento más cercano y tablero manual -->
+                <aside class="tarjeta-cuenta-regresiva" aria-label="Cuenta regresiva al próximo evento">
+                    <!-- Encabezado del evento dentro del recuadro -->
+                    <div class="cuenta-regresiva-encabezado">
+                        <span class="cuenta-regresiva-etiqueta">
+                            <i class="fas fa-bolt"></i> PRÓXIMO EVENTO OFICIAL
+                        </span>
+                        <h2 class="cuenta-regresiva-nombre">FIGHT NIGHT BOYACÁ II</h2>
+                        <p class="cuenta-regresiva-lugar">
+                            <i class="fas fa-calendar-alt"></i> 15 Ene 2027 · Coliseo Cubierto, Tunja
+                        </p>
+                    </div>
+
+                    <!-- Tablero de puntuación manual tipo reloj de hojas que se voltean -->
+                    <div class="tablero-flip" id="tableroCuentaRegresiva">
+                        <!-- Bloque de Días -->
+                        <div class="unidad-flip">
+                            <div class="grupo-digitos">
+                                <div class="tarjeta-digito" id="dias-decena">
+                                    <div class="mitad-superior"><span>0</span></div>
+                                    <div class="mitad-inferior"><span>0</span></div>
+                                    <div class="linea-central"></div>
+                                </div>
+                                <div class="tarjeta-digito" id="dias-unidad">
+                                    <div class="mitad-superior"><span>0</span></div>
+                                    <div class="mitad-inferior"><span>0</span></div>
+                                    <div class="linea-central"></div>
+                                </div>
+                            </div>
+                            <span class="etiqueta-tiempo">DÍAS</span>
+                        </div>
+
+                        <div class="separador-flip" aria-hidden="true">:</div>
+
+                        <!-- Bloque de Horas -->
+                        <div class="unidad-flip">
+                            <div class="grupo-digitos">
+                                <div class="tarjeta-digito" id="horas-decena">
+                                    <div class="mitad-superior"><span>0</span></div>
+                                    <div class="mitad-inferior"><span>0</span></div>
+                                    <div class="linea-central"></div>
+                                </div>
+                                <div class="tarjeta-digito" id="horas-unidad">
+                                    <div class="mitad-superior"><span>0</span></div>
+                                    <div class="mitad-inferior"><span>0</span></div>
+                                    <div class="linea-central"></div>
+                                </div>
+                            </div>
+                            <span class="etiqueta-tiempo">HORAS</span>
+                        </div>
+
+                        <div class="separador-flip" aria-hidden="true">:</div>
+
+                        <!-- Bloque de Minutos -->
+                        <div class="unidad-flip">
+                            <div class="grupo-digitos">
+                                <div class="tarjeta-digito" id="minutos-decena">
+                                    <div class="mitad-superior"><span>0</span></div>
+                                    <div class="mitad-inferior"><span>0</span></div>
+                                    <div class="linea-central"></div>
+                                </div>
+                                <div class="tarjeta-digito" id="minutos-unidad">
+                                    <div class="mitad-superior"><span>0</span></div>
+                                    <div class="mitad-inferior"><span>0</span></div>
+                                    <div class="linea-central"></div>
+                                </div>
+                            </div>
+                            <span class="etiqueta-tiempo">MIN</span>
+                        </div>
+
+                        <div class="separador-flip" aria-hidden="true">:</div>
+
+                        <!-- Bloque de Segundos -->
+                        <div class="unidad-flip">
+                            <div class="grupo-digitos">
+                                <div class="tarjeta-digito" id="segundos-decena">
+                                    <div class="mitad-superior"><span>0</span></div>
+                                    <div class="mitad-inferior"><span>0</span></div>
+                                    <div class="linea-central"></div>
+                                </div>
+                                <div class="tarjeta-digito" id="segundos-unidad">
+                                    <div class="mitad-superior"><span>0</span></div>
+                                    <div class="mitad-inferior"><span>0</span></div>
+                                    <div class="linea-central"></div>
+                                </div>
+                            </div>
+                            <span class="etiqueta-tiempo">SEG</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- SECCIÓN NOSOTROS (DISEÑO EDITORIAL DE LIGA DEPORTIVA) -->
+        <section class="nosotros" id="nosotros">
+            <div class="contenedor">
+                <!-- Cabecera editorial dividida en título fuerte e historia institucional -->
+                <div class="nosotros-cabecera" data-animar="subir">
+                    <div class="nosotros-titulo-bloque">
+                        <span class="subtitulo-seccion">IDENTIDAD DE LA LIGA</span>
+                        <h2 class="titulo-seccion">EXCELENCIA MARCIAL EN <span>BOYACÁ</span></h2>
+                    </div>
+                    <div class="nosotros-resumen">
+                        <p>
+                            Agrupamos a tres academias oficiales del departamento bajo un mismo estándar técnico, ético
+                            y competitivo. Preparamos atletas desde categorías formativas hasta el alto rendimiento
+                            nacional.
+                        </p>
+                        <a href="#sedes" class="enlace-flecha">
+                            EXPLORAR ACADEMIAS AFILIADAS <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tres pilares institucionales con diseño limpio y profesional -->
+                <div class="nosotros-pilares">
+                    <article class="pilar-tarjeta" data-animar="subir" data-retraso="1">
+                        <span class="pilar-numero">01</span>
+                        <h3 class="pilar-titulo">MISIÓN FORMATIVA</h3>
+                        <p class="pilar-texto">
+                            Construir deportistas íntegros a través de la disciplina, el respeto por el rival y la
+                            preparación física responsable en cada etapa de crecimiento.
+                        </p>
+                    </article>
+
+                    <article class="pilar-tarjeta" data-animar="subir" data-retraso="2">
+                        <span class="pilar-numero">02</span>
+                        <h3 class="pilar-titulo">AVAL Y REGLAMENTO</h3>
+                        <p class="pilar-texto">
+                            Todas nuestras veladas, pesajes y torneos se rigen bajo reglamento oficial unificado,
+                            garantizando la seguridad médica y deportiva de cada competidor.
+                        </p>
+                    </article>
+
+                    <article class="pilar-tarjeta" data-animar="subir" data-retraso="3">
+                        <span class="pilar-numero">03</span>
+                        <h3 class="pilar-titulo">PROYECCIÓN NACIONAL</h3>
+                        <p class="pilar-texto">
+                            Conectamos el talento de Tunja, Duitama y Sogamoso con campeonatos interligas y escenarios
+                            competitivos de primer nivel en toda Colombia.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SEDES Y ACADEMIAS AFILIADAS -->
+        <section class="sedes" id="sedes">
+            <div class="contenedor contenedor-sedes">
+                <div class="sedes-cabecera" data-animar="subir">
+                    <div>
+                        <span class="subtitulo-seccion">DÓNDE ENTRENAR</span>
+                        <h2 class="titulo-seccion">NUESTRAS SEDES</h2>
+                    </div>
+                    <a href="inscripciones.html" class="enlace-flecha">
+                        SOLICITAR CLASE DE PRUEBA <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjetas de las tres academias de la liga -->
+                <div class="sedes-cuadricula">
+                    <article class="tarjeta-sede" data-animar="subir" data-retraso="1">
+                        <div class="tarjeta-imagen">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <span class="sede-insignia">Sede Principal</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <h3 class="sede-nombre">SEDE TUNJA</h3>
+                            <div class="sede-datos">
+                                <span><i class="fas fa-map-marker-alt"></i> Cra. 10 #20-45, Centro, Tunja</span>
+                                <span><i class="fas fa-clock"></i> Lun a Sáb · 5:00 pm – 9:00 pm</span>
+                                <span><i class="fas fa-user-tie"></i> Maestro Carlos Mendoza</span>
+                            </div>
+                            <a href="#inscripciones" class="enlace-flecha">
+                                MÁS INFORMACIÓN <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-sede" data-animar="subir" data-retraso="2">
+                        <div class="tarjeta-imagen">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-hand-fist"></i>
+                            </div>
+                            <span class="sede-insignia">Grappling &amp; MMA</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <h3 class="sede-nombre">SEDE DUITAMA</h3>
+                            <div class="sede-datos">
+                                <span><i class="fas fa-map-marker-alt"></i> Cll. 15 #12-30, Duitama</span>
+                                <span><i class="fas fa-clock"></i> Lun a Vie · 6:00 pm – 9:00 pm</span>
+                                <span><i class="fas fa-user-tie"></i> Maestra Andrea Ramírez</span>
+                            </div>
+                            <a href="#inscripciones" class="enlace-flecha">
+                                MÁS INFORMACIÓN <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-sede" data-animar="subir" data-retraso="3">
+                        <div class="tarjeta-imagen">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <span class="sede-insignia">Striking &amp; MMA</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <h3 class="sede-nombre">SEDE SOGAMOSO</h3>
+                            <div class="sede-datos">
+                                <span><i class="fas fa-map-marker-alt"></i> Av. Villa Olímpica #8-12, Sogamoso</span>
+                                <span><i class="fas fa-clock"></i> Mar a Sáb · 4:00 pm – 8:00 pm</span>
+                                <span><i class="fas fa-user-tie"></i> Maestro Miguel Ángel Suárez</span>
+                            </div>
+                            <a href="#inscripciones" class="enlace-flecha">
+                                MÁS INFORMACIÓN <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DEPORTISTAS Y RANKING OFICIAL (TOP 3) -->
+        <section class="deportistas" id="deportistas">
+            <div class="contenedor">
+                <div class="deportistas-cabecera" data-animar="subir">
+                    <div>
+                        <span class="subtitulo-seccion">RANKING OFICIAL · TOP 3</span>
+                        <h2 class="titulo-seccion">DEPORTISTAS DESTACADOS</h2>
+                    </div>
+                    <a href="deportistas.html" class="enlace-flecha">
+                        VER TODOS LOS DEPORTISTAS <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Cuadrícula con los 3 mejores deportistas de la liga -->
+                <div class="deportistas-cuadricula">
+                    <article class="tarjeta-atleta" data-animar="subir" data-retraso="1">
+                        <div class="tarjeta-imagen">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-user-ninja"></i>
+                            </div>
+                            <span class="insignia-ranking">#1</span>
+                            <span class="insignia-categoria">MMA</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <h3 class="atleta-nombre">Carlos Andrés Rivera</h3>
+                            <p class="atleta-academia">Guerreros MMA · Tunja</p>
+                            <div class="atleta-estadisticas">
+                                <div class="dato">
+                                    <span class="dato-valor">70 kg</span>
+                                    <span class="dato-etiqueta">Peso</span>
+                                </div>
+                                <div class="dato">
+                                    <span class="dato-valor">8-1-0</span>
+                                    <span class="dato-etiqueta">Récord</span>
+                                </div>
+                                <div class="dato">
+                                    <span class="dato-valor">5</span>
+                                    <span class="dato-etiqueta">Medallas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-atleta" data-animar="subir" data-retraso="2">
+                        <div class="tarjeta-imagen">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-user-ninja"></i>
+                            </div>
+                            <span class="insignia-ranking">#2</span>
+                            <span class="insignia-categoria">Grappling</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <h3 class="atleta-nombre">María Fernanda López</h3>
+                            <p class="atleta-academia">Fénix BJJ · Duitama</p>
+                            <div class="atleta-estadisticas">
+                                <div class="dato">
+                                    <span class="dato-valor">57 kg</span>
+                                    <span class="dato-etiqueta">Peso</span>
+                                </div>
+                                <div class="dato">
+                                    <span class="dato-valor">12-2-1</span>
+                                    <span class="dato-etiqueta">Récord</span>
+                                </div>
+                                <div class="dato">
+                                    <span class="dato-valor">7</span>
+                                    <span class="dato-etiqueta">Medallas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-atleta" data-animar="subir" data-retraso="3">
+                        <div class="tarjeta-imagen">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-user-ninja"></i>
+                            </div>
+                            <span class="insignia-ranking">#3</span>
+                            <span class="insignia-categoria">Striking</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <h3 class="atleta-nombre">Juan Sebastián Torres</h3>
+                            <p class="atleta-academia">Titans Striking · Sogamoso</p>
+                            <div class="atleta-estadisticas">
+                                <div class="dato">
+                                    <span class="dato-valor">66 kg</span>
+                                    <span class="dato-etiqueta">Peso</span>
+                                </div>
+                                <div class="dato">
+                                    <span class="dato-valor">6-2-0</span>
+                                    <span class="dato-etiqueta">Récord</span>
+                                </div>
+                                <div class="dato">
+                                    <span class="dato-valor">3</span>
+                                    <span class="dato-etiqueta">Medallas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PRÓXIMOS EVENTOS -->
+        <section class="eventos" id="eventos">
+            <div class="contenedor">
+                <div class="eventos-cabecera" data-animar="subir">
+                    <div>
+                        <span class="subtitulo-seccion">CALENDARIO OFICIAL</span>
+                        <h2 class="titulo-seccion">PRÓXIMOS EVENTOS</h2>
+                    </div>
+                    <a href="#inscripciones" class="enlace-flecha enlace-flecha-claro">
+                        SOLICITAR PARTICIPACIÓN <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjetas de eventos próximos -->
+                <div class="eventos-cuadricula">
+                    <article class="tarjeta-evento" data-animar="subir" data-retraso="1">
+                        <div class="tarjeta-evento-cabecera">
+                            <div class="evento-fecha">
+                                <span class="dia">15</span>
+                                <span class="mes">ENE</span>
+                            </div>
+                            <span class="evento-estado abierto">CUPOS ABIERTOS</span>
+                        </div>
+                        <h3 class="evento-titulo">FIGHT NIGHT BOYACÁ II</h3>
+                        <p class="evento-descripcion">
+                            Velada de MMA amateur con 12 combates oficiales en categorías pluma a pesado.
+                        </p>
+                        <div class="evento-detalles">
+                            <span><i class="fas fa-map-marker-alt"></i> Coliseo Cubierto, Tunja</span>
+                            <span><i class="fas fa-clock"></i> 6:00 pm · Entrada libre</span>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-evento" data-animar="subir" data-retraso="2">
+                        <div class="tarjeta-evento-cabecera">
+                            <div class="evento-fecha">
+                                <span class="dia">28</span>
+                                <span class="mes">FEB</span>
+                            </div>
+                            <span class="evento-estado torneo"><i class="fas fa-trophy"></i> TORNEO</span>
+                        </div>
+                        <h3 class="evento-titulo">COPA DEPARTAMENTAL DE MMA</h3>
+                        <p class="evento-descripcion">
+                            Competencia por categorías de peso para juveniles y adultos de toda la región.
+                        </p>
+                        <div class="evento-detalles">
+                            <span><i class="fas fa-map-marker-alt"></i> Coliseo Mayor, Duitama</span>
+                            <span><i class="fas fa-clock"></i> 8:00 am · Inscripción $40.000</span>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-evento" data-animar="subir" data-retraso="3">
+                        <div class="tarjeta-evento-cabecera">
+                            <div class="evento-fecha">
+                                <span class="dia">15</span>
+                                <span class="mes">MAR</span>
+                            </div>
+                            <span class="evento-estado ultimos">ÚLTIMOS CUPOS</span>
+                        </div>
+                        <h3 class="evento-titulo">SEMINARIO DE GRAPPLING</h3>
+                        <p class="evento-descripcion">
+                            Jornada técnica de lucha y suelo dirigida por maestros certificados de la Liga.
+                        </p>
+                        <div class="evento-detalles">
+                            <span><i class="fas fa-map-marker-alt"></i> Villa Olímpica, Sogamoso</span>
+                            <span><i class="fas fa-clock"></i> 9:00 am · Inscripción $25.000</span>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Apartado especial de Torneos Oficiales dentro de la sección de Eventos -->
+                <div class="eventos-torneos" id="torneos" data-animar="subir">
+                    <div class="torneos-subcabecera">
+                        <div>
+                            <span class="subtitulo-seccion">COMPETENCIA OFICIAL</span>
+                            <h3 class="torneos-subtitulo">TORNEOS DE LA LIGA</h3>
+                        </div>
+                        <a href="torneos.html" class="enlace-flecha enlace-flecha-claro">
+                            VER TODOS LOS TORNEOS <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Tarjetas de torneos oficiales dentro de Eventos -->
+                    <div class="torneos-cuadricula">
+                        <article class="tarjeta-torneo">
+                            <div class="tarjeta-imagen">
+                                <div class="imagen-marcador">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <span class="torneo-estado activo">Inscripciones Abiertas</span>
+                            </div>
+                            <div class="tarjeta-cuerpo">
+                                <h4 class="torneo-nombre">Copa Boyacá MMA 2027</h4>
+                                <div class="torneo-fecha">
+                                    <i class="fas fa-calendar-alt"></i> 10 – 12 de Abril, 2027
+                                </div>
+                                <div class="torneo-datos">
+                                    <span class="dato-item"><i class="fas fa-users"></i> 128 cupos</span>
+                                    <span class="dato-item"><i class="fas fa-layer-group"></i> 4 categorías</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="tarjeta-torneo">
+                            <div class="tarjeta-imagen">
+                                <div class="imagen-marcador">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <span class="torneo-estado proximo">Próximamente</span>
+                            </div>
+                            <div class="tarjeta-cuerpo">
+                                <h4 class="torneo-nombre">Interligas Nacional</h4>
+                                <div class="torneo-fecha">
+                                    <i class="fas fa-calendar-alt"></i> 5 – 7 de Junio, 2027
+                                </div>
+                                <div class="torneo-datos">
+                                    <span class="dato-item"><i class="fas fa-users"></i> 256 participantes</span>
+                                    <span class="dato-item"><i class="fas fa-layer-group"></i> 3 disciplinas</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="tarjeta-torneo">
+                            <div class="tarjeta-imagen">
+                                <div class="imagen-marcador">
+                                    <i class="fas fa-medal"></i>
+                                </div>
+                                <span class="torneo-estado finalizado">Finalizado</span>
+                            </div>
+                            <div class="tarjeta-cuerpo">
+                                <h4 class="torneo-nombre">Grand Prix Grappling Boyacá</h4>
+                                <div class="torneo-fecha">
+                                    <i class="fas fa-calendar-alt"></i> 20 de Octubre, 2026
+                                </div>
+                                <div class="torneo-datos">
+                                    <span class="dato-item"><i class="fas fa-users"></i> 64 participantes</span>
+                                    <span class="dato-item"><i class="fas fa-check"></i> Resultados</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN NOVEDADES Y NOTICIAS -->
+        <section class="novedades" id="novedades">
+            <div class="contenedor">
+                <div class="novedades-cabecera" data-animar="subir">
+                    <div>
+                        <span class="subtitulo-seccion">ÚLTIMAS NOTICIAS</span>
+                        <h2 class="titulo-seccion">NOVEDADES</h2>
+                    </div>
+                    <a href="#eventos" class="enlace-flecha">
+                        VER CALENDARIO <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Tarjetas de noticias de la liga -->
+                <div class="novedades-cuadricula">
+                    <article class="tarjeta-noticia" data-animar="subir" data-retraso="1">
+                        <div class="tarjeta-imagen">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            <span class="noticia-categoria">Eventos</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <div class="noticia-fecha">20 de Noviembre, 2026</div>
+                            <h3 class="noticia-titulo">Fight Night Boyacá II: Confirmadas las peleas estelares</h3>
+                            <p class="noticia-resumen">
+                                Se confirmaron los combates principales de la segunda edición de Fight Night Boyacá en
+                                el Coliseo Cubierto de Tunja.
+                            </p>
+                            <a href="#eventos" class="enlace-flecha">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-noticia" data-animar="subir" data-retraso="2">
+                        <div class="tarjeta-imagen">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <span class="noticia-categoria">Logros</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <div class="noticia-fecha">15 de Noviembre, 2026</div>
+                            <h3 class="noticia-titulo">Boyacá consigue 5 medallas de oro en el Nacional</h3>
+                            <p class="noticia-resumen">
+                                Los deportistas de nuestras tres academias lograron un resultado histórico en el
+                                Campeonato Nacional de MMA.
+                            </p>
+                            <a href="#deportistas" class="enlace-flecha">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-noticia" data-animar="subir" data-retraso="3">
+                        <div class="tarjeta-imagen">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <span class="noticia-categoria">Academias</span>
+                        </div>
+                        <div class="tarjeta-cuerpo">
+                            <div class="noticia-fecha">1 de Noviembre, 2026</div>
+                            <h3 class="noticia-titulo">Sede Sogamoso amplía su área de entrenamiento</h3>
+                            <p class="noticia-resumen">
+                                La ampliación de nuestra tercera sede permite que más deportistas de Sugamuxi entrenen
+                                con estándares oficiales.
+                            </p>
+                            <a href="#sedes" class="enlace-flecha">
+                                Leer más <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PROFESORES -->
+        <section class="profesores" id="profesores">
+            <div class="contenedor">
+                <div class="profesores-cabecera" data-animar="subir">
+                    <span class="subtitulo-seccion">NUESTRO EQUIPO</span>
+                    <h2 class="titulo-seccion">PROFESORES</h2>
+                </div>
+
+                <!-- Cuadrícula de entrenadores certificados -->
+                <div class="profesores-cuadricula">
+                    <article class="tarjeta-profesor" data-animar="subir" data-retraso="1">
+                        <div class="profesor-imagen">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                        </div>
+                        <h3 class="profesor-nombre">Carlos Mendoza</h3>
+                        <p class="profesor-especialidad">MMA · Grappling</p>
+                        <p class="profesor-academia">Sede Tunja</p>
+                        <p class="profesor-biografia">Cinturón negro 3er dan. Más de 15 años formando competidores en
+                            Boyacá.</p>
+                        <div class="profesor-redes">
+                            <a href="#" aria-label="Instagram de Carlos Mendoza"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook de Carlos Mendoza"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-profesor" data-animar="subir" data-retraso="2">
+                        <div class="profesor-imagen">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                        </div>
+                        <h3 class="profesor-nombre">Andrea Ramírez</h3>
+                        <p class="profesor-especialidad">Grappling · BJJ</p>
+                        <p class="profesor-academia">Sede Duitama</p>
+                        <p class="profesor-biografia">Cinturón negro en BJJ y medallista panamericana. Especialista en
+                            lucha de suelo.</p>
+                        <div class="profesor-redes">
+                            <a href="#" aria-label="Instagram de Andrea Ramírez"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook de Andrea Ramírez"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-profesor" data-animar="subir" data-retraso="3">
+                        <div class="profesor-imagen">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                        </div>
+                        <h3 class="profesor-nombre">Miguel Ángel Suárez</h3>
+                        <p class="profesor-especialidad">Striking · Muay Thai</p>
+                        <p class="profesor-academia">Sede Sogamoso</p>
+                        <p class="profesor-biografia">Instructor certificado de Muay Thai y entrenador de selección
+                            departamental.</p>
+                        <div class="profesor-redes">
+                            <a href="#" aria-label="Instagram de Miguel Ángel Suárez"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook de Miguel Ángel Suárez"><i
+                                    class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-profesor" data-animar="subir" data-retraso="4">
+                        <div class="profesor-imagen">
+                            <div class="imagen-marcador">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                        </div>
+                        <h3 class="profesor-nombre">Diana Carolina Vargas</h3>
+                        <p class="profesor-especialidad">Preparación Física · MMA</p>
+                        <p class="profesor-academia">Sede Tunja</p>
+                        <p class="profesor-biografia">Licenciada en educación física, especialista en acondicionamiento
+                            para combate.</p>
+                        <div class="profesor-redes">
+                            <a href="#" aria-label="Instagram de Diana Carolina Vargas"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook de Diana Carolina Vargas"><i
+                                    class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN GALERÍA -->
+        <section class="galeria" id="galeria">
+            <div class="contenedor">
+                <span class="subtitulo-seccion" data-animar="subir">GALERÍA</span>
+                <h2 class="titulo-seccion" data-animar="subir">MOMENTOS DE LA LIGA</h2>
+
+                <!-- Cuadrícula visual de momentos de la liga -->
+                <div class="galeria-cuadricula">
+                    <div class="galeria-item" data-animar="escala" data-retraso="1">
+                        <div class="imagen-marcador"><i class="fas fa-camera"></i></div>
+                        <div class="galeria-superposicion">
+                            <div class="superposicion-contenido">
+                                <i class="fas fa-expand"></i>
+                                <span>Combates Oficiales</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="galeria-item" data-animar="escala" data-retraso="2">
+                        <div class="imagen-marcador"><i class="fas fa-camera"></i></div>
+                        <div class="galeria-superposicion">
+                            <div class="superposicion-contenido">
+                                <i class="fas fa-expand"></i>
+                                <span>Entrenamientos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="galeria-item" data-animar="escala" data-retraso="3">
+                        <div class="imagen-marcador"><i class="fas fa-camera"></i></div>
+                        <div class="galeria-superposicion">
+                            <div class="superposicion-contenido">
+                                <i class="fas fa-expand"></i>
+                                <span>Premiación</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="galeria-item" data-animar="escala" data-retraso="4">
+                        <div class="imagen-marcador"><i class="fas fa-camera"></i></div>
+                        <div class="galeria-superposicion">
+                            <div class="superposicion-contenido">
+                                <i class="fas fa-expand"></i>
+                                <span>Seminarios</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="galeria-item" data-animar="escala" data-retraso="5">
+                        <div class="imagen-marcador"><i class="fas fa-camera"></i></div>
+                        <div class="galeria-superposicion">
+                            <div class="superposicion-contenido">
+                                <i class="fas fa-expand"></i>
+                                <span>Academias</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BANNER LIMPIO CON FRASE INSPIRADORA ANTES DEL PIE DE PÁGINA -->
+        <section class="banner-frase" aria-label="Frase institucional">
+            <div class="contenedor banner-frase-contenedor">
+                <!-- Columna izquierda con la cita limpia y minimalista -->
+                <blockquote class="banner-cita" data-animar="subir">
+                    <p class="cita-texto">“Todo campeón fue una vez un luchador que se negó a rendirse”</p>
+                    <footer class="cita-autor">LIGA MMA BOYACÁ</footer>
+                    <span class="cita-linea" aria-hidden="true"></span>
+                </blockquote>
+                <!-- Columna derecha reservada para fotografía limpia del atleta -->
+                <div class="banner-visual" aria-hidden="true">
+                    <i class="fas fa-hand-fist"></i>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA COMPLETO CON PATROCINADORES OFICIALES -->
+    <footer class="pie-pagina" id="piePagina">
+        <!-- Barra tricolor de la bandera de Colombia en la parte superior del pie -->
+        <div class="barra-colombia" aria-hidden="true">
+            <div class="franja-amarilla"></div>
+            <div class="franja-azul"></div>
+            <div class="franja-roja"></div>
+        </div>
+
+        <div class="contenedor">
+            <!-- Cuadrícula principal de 4 columnas del pie de página -->
+            <div class="pie-contenido">
+                <!-- Columna 1: Marca, descripción corta y redes sociales -->
+                <div class="pie-marca">
+                    <a href="#inicio" class="pie-logo">
+                        <div class="pie-logo-icono">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <span class="pie-logo-texto">LIGA MMA BOYACÁ</span>
+                    </a>
+                    <p class="pie-descripcion">
+                        Liga de Artes Marciales Mixtas de Boyacá. Fuerza, disciplina y respeto dentro y fuera del
+                        octágono.
+                    </p>
+                    <div class="pie-redes">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/573104567890" target="_blank" rel="noopener noreferrer"
+                            aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Enlaces de la Liga -->
+                <div class="pie-columna">
+                    <h4>LA LIGA</h4>
+                    <ul>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="#sedes">Sedes</a></li>
+                        <li><a href="#profesores">Profesores</a></li>
+                        <li><a href="inscripciones.html">Inscripciones</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Enlaces de Competencia -->
+                <div class="pie-columna">
+                    <h4>COMPETENCIA</h4>
+                    <ul>
+                        <li><a href="#eventos">Eventos</a></li>
+                        <li><a href="#torneos">Torneos</a></li>
+                        <li><a href="#deportistas">Deportistas destacados</a></li>
+                        <li><a href="#novedades">Novedades</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Datos de Contacto -->
+                <div class="pie-columna">
+                    <h4>CONTACTO</h4>
+                    <div class="pie-contacto-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Cra. 10 #20-45, Tunja, Boyacá</span>
+                    </div>
+                    <div class="pie-contacto-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+57 310 456 7890</span>
+                    </div>
+                    <div class="pie-contacto-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contacto@ligammaboyaca.co</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Apartado dedicado para los Patrocinadores Oficiales de la Liga -->
+            <div class="pie-patrocinadores">
+                <h4 class="patrocinadores-titulo">PATROCINADORES OFICIALES</h4>
+                <div class="patrocinadores-lista">
+                    <div class="patrocinador-espacio">LOGO PATROCINADOR 1</div>
+                    <div class="patrocinador-espacio">LOGO PATROCINADOR 2</div>
+                    <div class="patrocinador-espacio">LOGO PATROCINADOR 3</div>
+                </div>
+            </div>
+
+            <!-- Barra inferior con derechos de autor y enlaces legales -->
+            <div class="pie-inferior">
+                <p>&copy; 2026 Liga de Artes Marciales Mixtas de Boyacá. Todos los derechos reservados.</p>
+                <p>
+                    <a href="#">Términos y condiciones</a> · <a href="#">Política de privacidad</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VENTANA MODAL DE INICIO DE SESIÓN Y RECUPERACIÓN (SIN CREAR CUENTA) -->
+    <div class="modal-superposicion" id="modalLogin" role="dialog" aria-modal="true" aria-labelledby="tituloModalLogin">
+        <div class="modal-tarjeta">
+            <button type="button" class="modal-cerrar" id="cerrarModal" aria-label="Cerrar ventana">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="modal-logo">
+                <div class="modal-logo-icono">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <span class="modal-logo-texto">LIGA MMA BOYACÁ</span>
+            </div>
+
+            <!-- Vista para iniciar sesión -->
+            <div class="modal-vista activa" id="vistaLogin">
+                <h2 class="modal-titulo" id="tituloModalLogin">Iniciar Sesión</h2>
+                <form class="modal-formulario" id="formularioLogin" novalidate>
+                    <div class="grupo-formulario">
+                        <label for="correoLogin">Correo electrónico</label>
+                        <input type="email" id="correoLogin" name="correoLogin" placeholder="usuario@ligammaboyaca.co"
+                            required>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="claveLogin">Contraseña</label>
+                        <input type="password" id="claveLogin" name="claveLogin" placeholder="Tu contraseña" required>
+                    </div>
+                    <button type="submit" class="boton-enviar-formulario">Iniciar Sesión</button>
+                </form>
+                <div class="modal-enlace-pie">
+                    <a href="#" id="mostrarRecuperar">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+
+            <!-- Vista para recuperar contraseña dentro de iniciar sesión -->
+            <div class="modal-vista" id="vistaRecuperar">
+                <h2 class="modal-titulo">Recuperar Contraseña</h2>
+                <form class="modal-formulario" id="formularioRecuperar" novalidate>
+                    <div class="grupo-formulario">
+                        <label for="correoRecuperar">Correo electrónico registrado</label>
+                        <input type="email" id="correoRecuperar" name="correoRecuperar"
+                            placeholder="usuario@ligammaboyaca.co" required>
+                    </div>
+                    <button type="submit" class="boton-enviar-formulario">Enviar enlace de recuperación</button>
+                </form>
+                <div class="modal-enlace-pie">
+                    <button type="button" class="boton-volver-login" id="mostrarLogin">
+                        <i class="fas fa-arrow-left"></i> Volver a iniciar sesión
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE PARA VOLVER ARRIBA -->
+    <button type="button" class="boton-subir" id="botonSubir" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Archivo JavaScript global compartido entre todas las páginas -->
+    <script src="js/global.js"></script>
+    <!-- Archivo JavaScript específico de la página de inicio -->
+    <script src="js/inicio.js"></script>
+</body>
+
+</html>

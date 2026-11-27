@@ -1,0 +1,524 @@
+/* Banner oscuro superior de las páginas internas con degradado verde */
+.banner-interno {
+    position: relative;
+    padding: 135px 0 68px;
+    background: radial-gradient(circle at 82% 55%, rgba(46, 125, 50, 0.34) 0%, transparent 55%), linear-gradient(120deg, #0b110e 0%, #132119 55%, #0c1410 100%);
+    overflow: hidden;
+}
+
+/* Capa sutil para suavizar el contraste del banner superior */
+.banner-superposicion {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8, 12, 10, 0.85) 0%, rgba(8, 12, 10, 0.35) 100%);
+    pointer-events: none;
+}
+
+/* Contenedor de texto del banner por encima del fondo */
+.banner-contenido {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ruta de navegación superior (Inicio > Nosotros) */
+.miga-pan {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.58);
+    margin-bottom: 14px;
+}
+
+/* Enlace de regreso al inicio en la ruta de navegación */
+.miga-pan a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+/* Color amarillo al pasar el cursor sobre el enlace de la ruta */
+.miga-pan a:hover {
+    color: #FCD116;
+}
+
+/* Icono separador pequeño en la ruta de navegación */
+.miga-pan i {
+    font-size: 0.55rem;
+}
+
+/* Título principal grande del banner Nosotros */
+.banner-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 1;
+    margin: 12px 0 14px;
+}
+
+/* Subtítulo descriptivo debajo del título del banner */
+.banner-subtitulo {
+    font-size: 0.98rem;
+    color: rgba(255, 255, 255, 0.76);
+    max-width: 560px;
+}
+
+/* Tres líneas pequeñas con los colores de la bandera de Colombia */
+.insignia-colores {
+    display: flex;
+    gap: 4px;
+}
+
+/* Tamaño de cada franja de color de la insignia */
+.insignia-colores span {
+    width: 14px;
+    height: 3px;
+    border-radius: 2px;
+}
+
+/* Franja amarilla de la insignia */
+.insignia-colores span:nth-child(1) {
+    background: #FCD116;
+}
+
+/* Franja azul de la insignia */
+.insignia-colores span:nth-child(2) {
+    background: #003893;
+}
+
+/* Franja roja de la insignia */
+.insignia-colores span:nth-child(3) {
+    background: #CE1126;
+}
+
+/* Sección de Nuestra Historia y Línea de Tiempo */
+.historia-seccion {
+    padding: 90px 0;
+    background: #ffffff;
+}
+
+/* Cuadrícula de dos columnas para Historia a la izquierda y Línea de Tiempo a la derecha */
+.historia-cuadricula {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 56px;
+    align-items: start;
+}
+
+/* Párrafos de relato de la historia de la liga */
+.historia-texto {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+/* Contenedor redondeado para la fotografía principal de historia */
+.historia-foto {
+    margin-top: 28px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Altura y fondo temporal de la fotografía de historia */
+.historia-foto .imagen-marcador {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #121a16 0%, #24382c 100%);
+}
+
+/* Tarjeta clara con borde suave para la Línea de Tiempo */
+.tarjeta-linea-tiempo {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 32px;
+    box-shadow: 0 6px 26px rgba(0, 0, 0, 0.04);
+}
+
+/* Encabezado interno de la Línea de Tiempo */
+.linea-tiempo-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 26px;
+}
+
+/* Icono verde del encabezado de la Línea de Tiempo */
+.linea-tiempo-cabecera i {
+    color: #2E7D32;
+    font-size: 1rem;
+}
+
+/* Título de la Línea de Tiempo */
+.linea-tiempo-cabecera h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #161b22;
+}
+
+/* Contenedor vertical con la línea gris que une todos los años */
+.linea-tiempo-lista {
+    position: relative;
+    padding-left: 28px;
+    border-left: 2px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Cada evento o hito histórico de la liga */
+.hito-item {
+    position: relative;
+}
+
+/* Círculo verde sobre la línea vertical para marcar cada año */
+.hito-punto {
+    position: absolute;
+    left: -35px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #2E7D32;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.16);
+}
+
+/* Año resaltado en verde y tipografía deportiva */
+.hito-anio {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #145a28;
+    line-height: 1.1;
+    margin-bottom: 3px;
+}
+
+/* Título corto del hito histórico */
+.hito-titulo {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #161b22;
+    margin-bottom: 3px;
+}
+
+/* Descripción breve del hito */
+.hito-descripcion {
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Sección de Misión y Visión con fondo gris muy suave */
+.mision-vision-seccion {
+    padding: 80px 0;
+    background: #f8fafc;
+    border-top: 1px solid #eef2f6;
+    border-bottom: 1px solid #eef2f6;
+}
+
+/* Cuadrícula de dos tarjetas iguales lado a lado */
+.mision-vision-cuadricula {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Estilo base compartido para las tarjetas de Misión y Visión */
+.tarjeta-proposito {
+    position: relative;
+    border-radius: 14px;
+    padding: 40px 38px 44px;
+    color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+/* Elevación suave al pasar el cursor sobre Misión o Visión */
+.tarjeta-proposito:hover {
+    transform: translateY(-4px);
+}
+
+/* Fondo verde institucional para la tarjeta de Misión */
+.tarjeta-mision {
+    background: #145328;
+}
+
+/* Fondo oscuro elegante para la tarjeta de Visión */
+.tarjeta-vision {
+    background: #0d1610;
+}
+
+/* Título grande de Misión y Visión */
+.tarjeta-proposito h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 14px 0 14px;
+}
+
+/* Texto descriptivo dentro de Misión y Visión */
+.tarjeta-proposito p {
+    font-size: 0.94rem;
+    color: rgba(255, 255, 255, 0.86);
+    line-height: 1.75;
+    position: relative;
+    z-index: 2;
+    max-width: 92%;
+}
+
+/* Icono decorativo gigante y semitransparente en la esquina inferior derecha */
+.icono-marca-agua {
+    position: absolute;
+    right: 18px;
+    bottom: -10px;
+    font-size: 6.5rem;
+    color: rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+}
+
+/* Sección de Objetivos Institucionales */
+.objetivos-seccion {
+    padding: 90px 0;
+    background: #ffffff;
+}
+
+/* Cuadrícula de 4 tarjetas para los objetivos */
+.objetivos-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 34px;
+}
+
+/* Tarjeta individual de objetivo con borde superior verde */
+.tarjeta-objetivo {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-top: 3px solid #2E7D32;
+    border-radius: 12px;
+    padding: 28px 22px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+/* Elevación y sombra al pasar el cursor sobre un objetivo */
+.tarjeta-objetivo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* Número grande en verde claro (01, 02, 03, 04) */
+.objetivo-numero {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: rgba(46, 125, 50, 0.28);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+/* Título del objetivo institucional */
+.objetivo-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #161b22;
+    margin-bottom: 8px;
+}
+
+/* Descripción del objetivo */
+.objetivo-texto {
+    font-size: 0.85rem;
+    color: #555f6d;
+    line-height: 1.6;
+}
+
+/* Sección de Valores Deportivos */
+.valores-seccion {
+    padding: 90px 0;
+    background: #f8fafc;
+    border-top: 1px solid #eef2f6;
+    border-bottom: 1px solid #eef2f6;
+}
+
+/* Cuadrícula de 3 columnas por 2 filas para los 6 valores */
+.valores-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 34px;
+}
+
+/* Tarjeta horizontal de valor deportivo */
+.tarjeta-valor {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+/* Elevación suave al pasar el cursor sobre un valor */
+.tarjeta-valor:hover {
+    transform: translateY(-4px);
+    border-color: rgba(46, 125, 50, 0.35);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+}
+
+/* Cuadro verde oscuro con el icono del valor deportivo */
+.valor-icono {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 10px;
+    background: #145328;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/* Título del valor deportivo */
+.valor-contenido h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.08rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #161b22;
+    margin-bottom: 4px;
+}
+
+/* Descripción del valor deportivo */
+.valor-contenido p {
+    font-size: 0.84rem;
+    color: #555f6d;
+    line-height: 1.5;
+}
+
+/* Sección de Información General de la Organización */
+.organizacion-seccion {
+    padding: 90px 0;
+    background: #ffffff;
+}
+
+/* Cuadrícula de dos columnas: texto a la izquierda y ficha técnica a la derecha */
+.organizacion-cuadricula {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 56px;
+    align-items: center;
+}
+
+/* Párrafo descriptivo de la entidad deportiva */
+.organizacion-intro p {
+    font-size: 0.94rem;
+    color: #4a5568;
+    line-height: 1.75;
+    margin-bottom: 26px;
+}
+
+/* Tarjeta con borde izquierdo verde que contiene los datos legales */
+.ficha-institucional {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #2E7D32;
+    border-radius: 12px;
+    padding: 8px 28px;
+    box-shadow: 0 6px 26px rgba(0, 0, 0, 0.04);
+}
+
+/* Cada fila de dato dentro de la ficha técnica */
+.ficha-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* Quita la línea divisoria de la última fila */
+.ficha-fila:last-child {
+    border-bottom: none;
+}
+
+/* Nombre del campo a la izquierda en gris */
+.ficha-etiqueta {
+    font-size: 0.86rem;
+    color: #64748b;
+}
+
+/* Valor del campo a la derecha en negrita */
+.ficha-valor {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #161b22;
+    text-align: right;
+}
+
+/* Adaptación para tabletas */
+@media (max-width: 1024px) {
+
+    /* Pasa Historia y Organización a una columna */
+    .historia-cuadricula,
+    .organizacion-cuadricula {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    /* Reduce Objetivos y Valores a dos columnas */
+    .objetivos-cuadricula,
+    .valores-cuadricula {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Adaptación para celulares */
+@media (max-width: 768px) {
+
+    /* Reduce el tamaño del título del banner en celular */
+    .banner-titulo {
+        font-size: 2.8rem;
+    }
+
+    /* Pasa Misión/Visión, Objetivos y Valores a una columna */
+    .mision-vision-cuadricula,
+    .objetivos-cuadricula,
+    .valores-cuadricula {
+        grid-template-columns: 1fr;
+    }
+
+    /* Apila etiqueta y valor de la ficha institucional en pantallas muy pequeñas */
+    .ficha-fila {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    /* Alinea el valor a la izquierda en celular */
+    .ficha-valor {
+        text-align: left;
+    }
+}

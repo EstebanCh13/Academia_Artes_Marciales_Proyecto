@@ -1,0 +1,2578 @@
+/* Reinicio básico para que todos los navegadores muestren los márgenes iguales */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Desplazamiento suave al hacer clic en cualquier enlace del menú */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Estilos generales del cuerpo de la página: fuente, color y fondo claro */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #161b22;
+    background-color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Contenedor centrado para que el contenido no se pegue a los bordes */
+.contenedor {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Subtítulo pequeño con línea verde que aparece encima de cada título de sección */
+.subtitulo-seccion {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #2E7D32;
+    margin-bottom: 10px;
+}
+
+/* Línea decorativa verde antes del subtítulo */
+.subtitulo-seccion::before {
+    content: '';
+    display: inline-block;
+    width: 36px;
+    height: 3px;
+    background: #2E7D32;
+}
+
+/* Título principal de cada sección en fuente deportiva Oswald */
+.titulo-seccion {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 18px;
+    color: #161b22;
+}
+
+/* Palabra resaltada en verde dentro de un título */
+.titulo-seccion span {
+    color: #2E7D32;
+}
+
+/* Estilo base para todos los botones principales */
+.boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Botón verde principal con efecto de elevación al pasar el cursor */
+.boton-primario {
+    background: #2E7D32;
+    color: #ffffff;
+}
+
+/* Cambio de color y sombra cuando el usuario pasa el cursor por el botón primario */
+.boton-primario:hover {
+    background: #1b5e20;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(46, 125, 50, 0.35);
+}
+
+/* Enlace de texto con flecha animada */
+.enlace-flecha {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #161b22;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Movimiento de la flecha y cambio a verde al pasar el cursor */
+.enlace-flecha:hover {
+    color: #2E7D32;
+    gap: 12px;
+}
+
+/* Variante clara del enlace con flecha para secciones de fondo oscuro */
+.enlace-flecha-claro {
+    color: #ffffff;
+}
+
+/* Color amarillo Colombia al pasar el cursor en enlaces claros */
+.enlace-flecha-claro:hover {
+    color: #FCD116;
+}
+
+/* Barra tricolor de la bandera de Colombia (50% amarillo, 25% azul, 25% rojo) */
+.barra-colombia {
+    display: flex;
+    height: 4px;
+    width: 100%;
+}
+
+/* Franja amarilla de la bandera de Colombia */
+.barra-colombia .franja-amarilla {
+    flex: 2;
+    background: #FCD116;
+}
+
+/* Franja azul de la bandera de Colombia */
+.barra-colombia .franja-azul {
+    flex: 1;
+    background: #003893;
+}
+
+/* Franja roja de la bandera de Colombia */
+.barra-colombia .franja-roja {
+    flex: 1;
+    background: #CE1126;
+}
+
+/* Encabezado fijo en la parte superior de la pantalla */
+.encabezado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Barra de navegación inicialmente transparente sobre la portada */
+.barra-navegacion {
+    background: transparent;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+    transition: background-color 0.35s ease, height 0.35s ease;
+}
+
+/* Estado normal de la barra cuando el usuario baja por la página */
+.encabezado.desplazado .barra-navegacion {
+    background: rgba(16, 36, 24, 0.97);
+    height: 70px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.28);
+}
+
+/* Contenedor del logo y nombre de la liga en el menú */
+.logo-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Caja cuadrada del icono del escudo en el logo */
+.logo-icono {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    color: #FCD116;
+}
+
+/* Columna de texto del logotipo */
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Título principal del logo */
+.logo-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+    color: #ffffff;
+}
+
+/* Subtítulo regional debajo del título del logo */
+.logo-subtitulo {
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+    margin-top: 3px;
+}
+
+/* Lista horizontal de enlaces del menú */
+.enlaces-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    list-style: none;
+}
+
+/* Estilo individual de cada enlace del menú superior */
+.enlaces-navegacion a {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Resaltado cuando el usuario pasa el cursor o está en esa sección */
+.enlaces-navegacion a:hover,
+.enlaces-navegacion a.activo {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Línea inferior amarilla para el enlace activo */
+.enlaces-navegacion a.activo::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background: #FCD116;
+    border-radius: 2px;
+}
+
+/* Zona derecha de la barra con el botón único de Iniciar Sesión */
+.acciones-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Botón único de Iniciar Sesión en la barra de navegación */
+.boton-iniciar-sesion {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    background: #2E7D32;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Efecto al pasar el cursor sobre el botón Iniciar Sesión */
+.boton-iniciar-sesion:hover {
+    background: #1b5e20;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(46, 125, 50, 0.45);
+}
+
+/* Botón de tres líneas para abrir el menú en celulares */
+.boton-menu-movil {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+}
+
+/* Cada una de las tres rayas del botón móvil */
+.boton-menu-movil span {
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Transformación de la primera raya en X cuando el menú móvil está abierto */
+.boton-menu-movil.activo span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+/* Oculta la raya del medio cuando el menú móvil está abierto */
+.boton-menu-movil.activo span:nth-child(2) {
+    opacity: 0;
+}
+
+/* Transformación de la tercera raya en X cuando el menú móvil está abierto */
+.boton-menu-movil.activo span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Sección principal de portada que ocupa toda la altura de la pantalla */
+.portada {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 120px 0 64px;
+    background: #0c1210;
+    overflow: hidden;
+}
+
+/* Contenedor de las diapositivas automáticas de fondo */
+.portada-diapositivas {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+/* Cada diapositiva de fondo con transición suave de opacidad */
+.diapositiva {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+/* Diapositiva visible actualmente */
+.diapositiva.activa {
+    opacity: 1;
+}
+
+/* Fondo atmosférico de la diapositiva 1 */
+.diapositiva-1 {
+    background: radial-gradient(circle at 75% 35%, rgba(46, 125, 50, 0.32) 0%, transparent 55%), linear-gradient(125deg, #0b110e 0%, #15251c 50%, #090d0b 100%);
+}
+
+/* Fondo atmosférico de la diapositiva 2 */
+.diapositiva-2 {
+    background: radial-gradient(circle at 70% 40%, rgba(252, 209, 22, 0.16) 0%, transparent 50%), linear-gradient(135deg, #0c1118 0%, #162436 52%, #0a0d12 100%);
+}
+
+/* Fondo atmosférico de la diapositiva 3 */
+.diapositiva-3 {
+    background: radial-gradient(circle at 72% 38%, rgba(206, 17, 38, 0.22) 0%, transparent 50%), linear-gradient(135deg, #120c0e 0%, #24161b 50%, #0a0c0e 100%);
+}
+
+/* Capa oscura graduada para garantizar lectura perfecta de las letras blancas */
+.portada-superposicion {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(8, 12, 10, 0.88) 0%, rgba(8, 12, 10, 0.55) 55%, rgba(8, 12, 10, 0.45) 100%), linear-gradient(180deg, rgba(8, 12, 10, 0.5) 0%, transparent 35%, rgba(8, 12, 10, 0.88) 100%);
+}
+
+/* Contenedor interno de la portada dividido entre texto a la izquierda y evento abajo a la derecha */
+.portada-contenedor {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+/* Bloque izquierdo con título, descripción y botón de inscripción */
+.portada-contenido {
+    max-width: 640px;
+    padding-bottom: 12px;
+}
+
+/* Insignia superior de temporada con los colores de Colombia */
+.portada-insignia {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Tres líneas pequeñas de color amarillo, azul y rojo */
+.insignia-colores {
+    display: flex;
+    gap: 3px;
+}
+
+/* Tamaño de cada línea tricolor de la insignia */
+.insignia-colores span {
+    width: 14px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+/* Color amarillo de la insignia */
+.insignia-colores span:nth-child(1) {
+    background: #FCD116;
+}
+
+/* Color azul de la insignia */
+.insignia-colores span:nth-child(2) {
+    background: #003893;
+}
+
+/* Color rojo de la insignia */
+.insignia-colores span:nth-child(3) {
+    background: #CE1126;
+}
+
+/* Texto de la insignia superior */
+.insignia-texto {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Título gigante de la portada con contraste nítido */
+.portada-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.02;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+    transition: opacity 0.4s ease;
+}
+
+/* Palabra destacada en verde brillante legible sobre fondo oscuro */
+.portada-titulo .resaltado {
+    color: #4caf50;
+}
+
+/* Párrafo descriptivo debajo del título */
+.portada-descripcion {
+    font-size: 1.02rem;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 520px;
+    transition: opacity 0.4s ease;
+}
+
+/* Contenedor del botón principal de la portada */
+.portada-botones {
+    display: flex;
+    gap: 16px;
+}
+
+/* Recuadro en la esquina inferior derecha con el próximo evento y cuenta regresiva */
+.tarjeta-cuenta-regresiva {
+    background: rgba(13, 18, 16, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-top: 3px solid #2E7D32;
+    border-radius: 14px;
+    padding: 22px 24px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+    flex-shrink: 0;
+}
+
+/* Encabezado informativo del próximo evento */
+.cuenta-regresiva-encabezado {
+    margin-bottom: 16px;
+}
+
+/* Etiqueta dorada que indica el próximo torneo oficial */
+.cuenta-regresiva-etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FCD116;
+    margin-bottom: 4px;
+}
+
+/* Nombre del evento dentro del recuadro */
+.cuenta-regresiva-nombre {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+/* Fecha y lugar del evento */
+.cuenta-regresiva-lugar {
+    font-size: 0.76rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Icono verde del lugar y fecha */
+.cuenta-regresiva-lugar i {
+    color: #4caf50;
+}
+
+/* Contenedor horizontal del tablero de puntuación manual */
+.tablero-flip {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+/* Cada unidad de tiempo (Días, Horas, Minutos, Segundos) */
+.unidad-flip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Par de tarjetas de dígitos lado a lado */
+.grupo-digitos {
+    display: flex;
+    gap: 4px;
+}
+
+/* Tarjeta individual de un dígito con perspectiva 3D para el volteo */
+.tarjeta-digito {
+    position: relative;
+    width: 34px;
+    height: 48px;
+    background: #1d2228;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    perspective: 220px;
+    overflow: hidden;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #f0f2f5;
+}
+
+/* Mitad superior e inferior estáticas de cada dígito */
+.tarjeta-digito .mitad-superior,
+.tarjeta-digito .mitad-inferior,
+.tarjeta-digito .hoja-volteo-superior,
+.tarjeta-digito .hoja-volteo-inferior {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background: #232930;
+    backface-visibility: hidden;
+}
+
+/* Posición de la mitad superior del número */
+.tarjeta-digito .mitad-superior,
+.tarjeta-digito .hoja-volteo-superior {
+    top: 0;
+    align-items: flex-end;
+    border-radius: 6px 6px 0 0;
+    background: linear-gradient(180deg, #2a313a 0%, #20252c 100%);
+}
+
+/* Posición de la mitad inferior del número */
+.tarjeta-digito .mitad-inferior,
+.tarjeta-digito .hoja-volteo-inferior {
+    bottom: 0;
+    align-items: flex-start;
+    border-radius: 0 0 6px 6px;
+    background: linear-gradient(180deg, #1b2026 0%, #242b33 100%);
+}
+
+/* Ajuste vertical del número dentro de la mitad superior para que coincida con la inferior */
+.tarjeta-digito .mitad-superior span,
+.tarjeta-digito .hoja-volteo-superior span {
+    transform: translateY(50%);
+    line-height: 1;
+}
+
+/* Ajuste vertical del número dentro de la mitad inferior */
+.tarjeta-digito .mitad-inferior span,
+.tarjeta-digito .hoja-volteo-inferior span {
+    transform: translateY(-50%);
+    line-height: 1;
+}
+
+/* Hoja superior que cae hacia adelante cuando cambia el número */
+.tarjeta-digito .hoja-volteo-superior {
+    z-index: 3;
+    transform-origin: bottom center;
+    animation: voltearArriba 0.3s ease-in forwards;
+}
+
+/* Hoja inferior que aparece después de caer la hoja superior */
+.tarjeta-digito .hoja-volteo-inferior {
+    z-index: 4;
+    transform-origin: top center;
+    transform: rotateX(90deg);
+    animation: voltearAbajo 0.3s 0.28s ease-out forwards;
+}
+
+/* Línea oscura horizontal en el centro que simula la bisagra del tablero manual */
+.tarjeta-digito .linea-central {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.65);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+    z-index: 5;
+}
+
+/* Animación de caída de la mitad superior de la tarjeta */
+@keyframes voltearArriba {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(-90deg);
+    }
+}
+
+/* Animación de despliegue de la mitad inferior de la tarjeta */
+@keyframes voltearAbajo {
+    0% {
+        transform: rotateX(90deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+/* Dos puntos separadores entre cada bloque de tiempo */
+.separador-flip {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 46px;
+}
+
+/* Etiqueta pequeña debajo de cada unidad del tablero */
+.etiqueta-tiempo {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+}
+
+/* Sección Nosotros con diseño editorial deportivo de alto nivel */
+.nosotros {
+    padding: 105px 0;
+    background: #ffffff;
+    border-bottom: 1px solid #eef0f3;
+}
+
+/* Cabecera editorial de dos columnas en Nosotros */
+.nosotros-cabecera {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 60px;
+}
+
+/* Párrafo resumen de la liga en la columna derecha */
+.nosotros-resumen p {
+    font-size: 0.98rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Cuadrícula de los tres pilares institucionales */
+.nosotros-pilares {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+/* Cada bloque de pilar con línea superior de acento */
+.pilar-tarjeta {
+    padding-top: 24px;
+    border-top: 2px solid #e2e8f0;
+    transition: border-color 0.3s ease;
+}
+
+/* Resalta la línea superior en verde cuando se pasa el cursor */
+.pilar-tarjeta:hover {
+    border-top-color: #2E7D32;
+}
+
+/* Número grande de orden del pilar (01, 02, 03) */
+.pilar-numero {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #2E7D32;
+    margin-bottom: 10px;
+}
+
+/* Título del pilar institucional */
+.pilar-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #161b22;
+    margin-bottom: 10px;
+}
+
+/* Texto explicativo del pilar */
+.pilar-texto {
+    font-size: 0.9rem;
+    color: #555f6d;
+    line-height: 1.7;
+}
+
+/* Sección de Sedes y Academias */
+.sedes {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+/* Contenedor ligeramente más amplio para agrandar un poco las tarjetas de Sedes */
+.contenedor-sedes {
+    max-width: 1320px;
+}
+
+/* Cabecera de Sedes con título a la izquierda y enlace a la derecha */
+.sedes-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+/* Cuadrícula de 3 columnas para las tres academias */
+.sedes-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px;
+}
+
+/* Tarjeta individual de cada sede */
+.tarjeta-sede {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Efecto de elevación en la tarjeta de sede */
+.tarjeta-sede:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de la imagen de la sede ligeramente más alto */
+.tarjeta-sede .tarjeta-imagen {
+    position: relative;
+    height: 245px;
+    overflow: hidden;
+}
+
+/* Fondo temporal de la imagen de sede */
+.tarjeta-sede .tarjeta-imagen .imagen-marcador {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a2332 0%, #2d3748 100%);
+    transition: transform 0.5s ease;
+}
+
+/* Acercamiento suave de la imagen al pasar el cursor */
+.tarjeta-sede:hover .tarjeta-imagen .imagen-marcador {
+    transform: scale(1.05);
+}
+
+/* Etiqueta verde sobre la esquina de la foto de sede */
+.tarjeta-sede .sede-insignia {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: #2E7D32;
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Cuerpo interno con los datos de la sede */
+.tarjeta-sede .tarjeta-cuerpo {
+    padding: 24px;
+}
+
+/* Nombre de la sede */
+.tarjeta-sede .sede-nombre {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: #161b22;
+}
+
+/* Lista vertical de dirección, horario y profesor */
+.tarjeta-sede .sede-datos {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+/* Cada fila de información de la sede */
+.tarjeta-sede .sede-datos span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #555f6d;
+}
+
+/* Iconos verdes de la sede */
+.tarjeta-sede .sede-datos i {
+    color: #2E7D32;
+    width: 14px;
+    text-align: center;
+    font-size: 0.82rem;
+}
+
+/* Sección de Deportistas y Ranking */
+.deportistas {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+/* Cabecera de Deportistas con título a la izquierda y enlace a la derecha */
+.deportistas-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+/* Cuadrícula de tarjetas de deportistas */
+.deportistas-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Tarjeta individual del atleta */
+.tarjeta-atleta {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Efecto al pasar el cursor sobre la tarjeta del atleta */
+.tarjeta-atleta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* Foto del atleta */
+.tarjeta-atleta .tarjeta-imagen {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Marcador visual de la foto del atleta */
+.tarjeta-atleta .tarjeta-imagen .imagen-marcador {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #2d3748 0%, #161b22 100%);
+    transition: transform 0.5s ease;
+}
+
+/* Zoom sutil en la foto del atleta */
+.tarjeta-atleta:hover .tarjeta-imagen .imagen-marcador {
+    transform: scale(1.05);
+}
+
+/* Círculo amarillo con la posición en el ranking */
+.tarjeta-atleta .insignia-ranking {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #FCD116;
+    color: #161b22;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Etiqueta verde con la disciplina del atleta */
+.tarjeta-atleta .insignia-categoria {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #2E7D32;
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Cuerpo de texto de la tarjeta del atleta */
+.tarjeta-atleta .tarjeta-cuerpo {
+    padding: 20px;
+}
+
+/* Nombre completo del atleta */
+.tarjeta-atleta .atleta-nombre {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #161b22;
+    margin-bottom: 4px;
+}
+
+/* Academia a la que pertenece el atleta */
+.tarjeta-atleta .atleta-academia {
+    font-size: 0.8rem;
+    color: #2E7D32;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+/* Fila inferior con peso, récord y medallas */
+.tarjeta-atleta .atleta-estadisticas {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid #edf2f7;
+}
+
+/* Bloque individual de estadística del atleta */
+.tarjeta-atleta .atleta-estadisticas .dato {
+    text-align: center;
+}
+
+/* Valor numérico de la estadística del atleta */
+.tarjeta-atleta .atleta-estadisticas .dato-valor {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #161b22;
+    display: block;
+}
+
+/* Nombre del dato debajo del valor */
+.tarjeta-atleta .atleta-estadisticas .dato-etiqueta {
+    font-size: 0.62rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #718096;
+}
+
+/* Sección de Próximos Eventos con fondo oscuro elegante */
+.eventos {
+    padding: 100px 0;
+    background: #0d1210;
+}
+
+/* Título blanco en la sección oscura de eventos */
+.eventos .titulo-seccion {
+    color: #ffffff;
+}
+
+/* Cabecera de Eventos */
+.eventos-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+/* Cuadrícula de 3 tarjetas de eventos */
+.eventos-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Tarjeta individual de evento */
+.tarjeta-evento {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 14px;
+    padding: 28px;
+    transition: all 0.3s ease;
+}
+
+/* Resalte verde sutil al pasar el cursor sobre un evento */
+.tarjeta-evento:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(46, 125, 50, 0.45);
+    transform: translateY(-5px);
+}
+
+/* Parte superior de la tarjeta con fecha y estado */
+.tarjeta-evento-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+/* Caja verde con el día y mes del evento */
+.evento-fecha {
+    text-align: center;
+    background: #2E7D32;
+    border-radius: 10px;
+    padding: 10px 16px;
+    min-width: 68px;
+}
+
+/* Día en grande dentro de la caja de fecha */
+.evento-fecha .dia {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+    display: block;
+}
+
+/* Mes abreviado debajo del día */
+.evento-fecha .mes {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.85);
+    display: block;
+    margin-top: 2px;
+}
+
+/* Etiqueta de estado del evento */
+.evento-estado {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Estado Cupos Abiertos en verde */
+.evento-estado.abierto {
+    background: rgba(46, 125, 50, 0.2);
+    color: #66bb6a;
+    border: 1px solid rgba(46, 125, 50, 0.4);
+}
+
+/* Estado Torneo en amarillo */
+.evento-estado.torneo {
+    background: rgba(252, 209, 22, 0.16);
+    color: #FCD116;
+    border: 1px solid rgba(252, 209, 22, 0.35);
+}
+
+/* Estado Últimos Cupos en rojo */
+.evento-estado.ultimos {
+    background: rgba(206, 17, 38, 0.18);
+    color: #ff6b6b;
+    border: 1px solid rgba(206, 17, 38, 0.4);
+}
+
+/* Título del evento */
+.tarjeta-evento .evento-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Descripción del evento */
+.tarjeta-evento .evento-descripcion {
+    font-size: 0.86rem;
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Detalles de lugar y hora del evento */
+.tarjeta-evento .evento-detalles {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Cada línea de detalle del evento */
+.tarjeta-evento .evento-detalles span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+/* Iconos verdes de detalle de evento */
+.tarjeta-evento .evento-detalles i {
+    color: #4caf50;
+    width: 14px;
+    text-align: center;
+}
+
+/* Apartado especial de Torneos Oficiales integrado dentro de Eventos */
+.eventos-torneos {
+    margin-top: 72px;
+    padding-top: 56px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Cabecera del bloque de torneos dentro de Eventos */
+.torneos-subcabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+}
+
+/* Título secundario de Torneos sobre fondo oscuro */
+.torneos-subtitulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+/* Cuadrícula de 3 tarjetas de torneos */
+.torneos-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Tarjeta individual de torneo adaptada al fondo oscuro de Eventos */
+.tarjeta-torneo {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+/* Elevación al pasar el cursor sobre el torneo */
+.tarjeta-torneo:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(46, 125, 50, 0.45);
+}
+
+/* Imagen del torneo */
+.tarjeta-torneo .tarjeta-imagen {
+    height: 190px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Marcador de imagen del torneo */
+.tarjeta-torneo .tarjeta-imagen .imagen-marcador {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #132219 0%, #24572c 100%);
+    transition: transform 0.5s ease;
+}
+
+/* Zoom en la imagen del torneo */
+.tarjeta-torneo:hover .tarjeta-imagen .imagen-marcador {
+    transform: scale(1.05);
+}
+
+/* Insignia de estado del torneo */
+.tarjeta-torneo .torneo-estado {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Torneo con inscripciones activas */
+.torneo-estado.activo {
+    background: #2E7D32;
+    color: #ffffff;
+}
+
+/* Torneo próximo */
+.torneo-estado.proximo {
+    background: #FCD116;
+    color: #161b22;
+}
+
+/* Torneo finalizado */
+.torneo-estado.finalizado {
+    background: #ffffff;
+    color: #161b22;
+}
+
+/* Cuerpo de la tarjeta de torneo */
+.tarjeta-torneo .tarjeta-cuerpo {
+    padding: 22px;
+}
+
+/* Nombre del torneo en blanco sobre fondo oscuro */
+.tarjeta-torneo .torneo-nombre {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+/* Fecha del torneo */
+.tarjeta-torneo .torneo-fecha {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 14px;
+}
+
+/* Icono verde de fecha del torneo */
+.tarjeta-torneo .torneo-fecha i {
+    color: #4caf50;
+}
+
+/* Fila inferior de cupos y categorías del torneo */
+.tarjeta-torneo .torneo-datos {
+    display: flex;
+    gap: 20px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Cada dato de la fila inferior del torneo */
+.tarjeta-torneo .torneo-datos .dato-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Iconos verdes en datos del torneo */
+.tarjeta-torneo .torneo-datos i {
+    color: #4caf50;
+}
+
+/* Sección de Novedades y Noticias */
+.novedades {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+/* Cabecera de Novedades */
+.novedades-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+/* Cuadrícula de 3 tarjetas de noticias */
+.novedades-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Tarjeta individual de noticia */
+.tarjeta-noticia {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Elevación al pasar el cursor sobre la noticia */
+.tarjeta-noticia:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de imagen de la noticia */
+.tarjeta-noticia .tarjeta-imagen {
+    height: 210px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Marcador visual de imagen de la noticia */
+.tarjeta-noticia .tarjeta-imagen .imagen-marcador {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2d3748 0%, #1a2332 100%);
+    transition: transform 0.5s ease;
+}
+
+/* Zoom sutil en la imagen de noticia */
+.tarjeta-noticia:hover .tarjeta-imagen .imagen-marcador {
+    transform: scale(1.05);
+}
+
+/* Etiqueta de categoría sobre la foto de la noticia */
+.tarjeta-noticia .noticia-categoria {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #2E7D32;
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Cuerpo de texto de la noticia */
+.tarjeta-noticia .tarjeta-cuerpo {
+    padding: 24px;
+}
+
+/* Fecha de publicación de la noticia */
+.tarjeta-noticia .noticia-fecha {
+    font-size: 0.75rem;
+    color: #718096;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* Título de la noticia */
+.tarjeta-noticia .noticia-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #161b22;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+/* Resumen de la noticia */
+.tarjeta-noticia .noticia-resumen {
+    font-size: 0.85rem;
+    color: #555f6d;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+/* Sección de Inscripciones */
+.inscripciones {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+/* Cuadrícula de dos columnas: pasos a la izquierda y formulario a la derecha */
+.inscripciones-cuadricula {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Texto introductorio de inscripciones */
+.inscripciones-info .info-texto {
+    font-size: 0.95rem;
+    color: #555f6d;
+    line-height: 1.8;
+    margin-bottom: 32px;
+}
+
+/* Lista vertical de pasos para inscribirse */
+.lista-pasos {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* Cada fila de paso numerado */
+.paso-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+/* Cuadro verde con el número del paso */
+.paso-numero {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    background: #2E7D32;
+    color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+/* Título de cada paso */
+.paso-contenido h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #161b22;
+    margin-bottom: 4px;
+}
+
+/* Descripción de cada paso */
+.paso-contenido p {
+    font-size: 0.85rem;
+    color: #555f6d;
+    line-height: 1.5;
+}
+
+/* Tarjeta blanca que envuelve el formulario de inscripción */
+.inscripciones-formulario {
+    background: #ffffff;
+    padding: 38px;
+    border-radius: 14px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Título del formulario */
+.inscripciones-formulario h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #161b22;
+    margin-bottom: 24px;
+}
+
+/* Espaciado entre cada campo del formulario */
+.grupo-formulario {
+    margin-bottom: 18px;
+}
+
+/* Etiqueta encima de cada caja de texto */
+.grupo-formulario label {
+    display: block;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #4a5568;
+    margin-bottom: 6px;
+}
+
+/* Estilo de cajas de texto, listas desplegables y área de mensaje */
+.grupo-formulario input,
+.grupo-formulario select,
+.grupo-formulario textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background: #fafafa;
+    color: #161b22;
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+/* Borde verde cuando el usuario hace clic dentro de un campo */
+.grupo-formulario input:focus,
+.grupo-formulario select:focus,
+.grupo-formulario textarea:focus {
+    border-color: #2E7D32;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
+}
+
+/* Borde rojo cuando falta un campo obligatorio */
+.grupo-formulario input.error,
+.grupo-formulario select.error {
+    border-color: #CE1126;
+}
+
+/* Altura mínima del cuadro de mensaje */
+.grupo-formulario textarea {
+    resize: vertical;
+    min-height: 96px;
+}
+
+/* Fila con dos campos uno al lado del otro */
+.fila-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Botón ancho para enviar el formulario */
+.boton-enviar-formulario {
+    width: 100%;
+    padding: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #2E7D32;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 6px;
+}
+
+/* Efecto hover del botón de enviar formulario */
+.boton-enviar-formulario:hover {
+    background: #1b5e20;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.35);
+}
+
+/* Sección de Profesores */
+.profesores {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+/* Cabecera centrada de Profesores */
+.profesores-cabecera {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Centra el subtítulo de Profesores */
+.profesores-cabecera .subtitulo-seccion {
+    justify-content: center;
+}
+
+/* Oculta la línea lateral en el subtítulo centrado de Profesores */
+.profesores-cabecera .subtitulo-seccion::before {
+    display: none;
+}
+
+/* Cuadrícula de 4 tarjetas de profesores */
+.profesores-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+/* Tarjeta individual de cada profesor */
+.tarjeta-profesor {
+    text-align: center;
+    padding: 30px 20px;
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+/* Elevación al pasar el cursor sobre la tarjeta del profesor */
+.tarjeta-profesor:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Foto circular del profesor con borde verde */
+.tarjeta-profesor .profesor-imagen {
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    overflow: hidden;
+    border: 3px solid #2E7D32;
+}
+
+/* Fondo temporal de la foto del profesor */
+.tarjeta-profesor .profesor-imagen .imagen-marcador {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2d3748 0%, #161b22 100%);
+}
+
+/* Nombre del profesor */
+.tarjeta-profesor .profesor-nombre {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #161b22;
+    margin-bottom: 4px;
+}
+
+/* Especialidad marcial del profesor */
+.tarjeta-profesor .profesor-especialidad {
+    font-size: 0.8rem;
+    color: #2E7D32;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+/* Sede donde enseña el profesor */
+.tarjeta-profesor .profesor-academia {
+    font-size: 0.75rem;
+    color: #718096;
+    margin-bottom: 12px;
+}
+
+/* Reseña corta del profesor */
+.tarjeta-profesor .profesor-biografia {
+    font-size: 0.8rem;
+    color: #555f6d;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+/* Fila de botones de redes del profesor */
+.tarjeta-profesor .profesor-redes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Botón circular de red social del profesor */
+.tarjeta-profesor .profesor-redes a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4a5568;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Color verde al pasar el cursor sobre las redes del profesor */
+.tarjeta-profesor .profesor-redes a:hover {
+    background: #2E7D32;
+    color: #ffffff;
+}
+
+/* Sección de Galería */
+.galeria {
+    padding: 100px 0;
+    background: #0d1210;
+}
+
+/* Subtítulo centrado en la Galería */
+.galeria .subtitulo-seccion {
+    display: flex;
+    justify-content: center;
+}
+
+/* Quita la línea lateral en el subtítulo de Galería */
+.galeria .subtitulo-seccion::before {
+    display: none;
+}
+
+/* Título blanco centrado en la Galería */
+.galeria .titulo-seccion {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Cuadrícula tipo mosaico para las fotos de la Galería */
+.galeria-cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+/* Cada cuadro de foto de la Galería */
+.galeria-item {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Hace que la primera foto sea más alta ocupando dos filas */
+.galeria-item:nth-child(1) {
+    grid-row: span 2;
+}
+
+/* Altura base de las fotos de galería */
+.galeria-item .imagen-marcador {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    background: linear-gradient(135deg, #1a2332 0%, #2d3748 100%);
+    transition: transform 0.5s ease;
+}
+
+/* Altura doble para la primera foto del mosaico */
+.galeria-item:nth-child(1) .imagen-marcador {
+    min-height: 416px;
+}
+
+/* Capa verde semitransparente que aparece al pasar el cursor sobre la foto */
+.galeria-item .galeria-superposicion {
+    position: absolute;
+    inset: 0;
+    background: rgba(46, 125, 50, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Acercamiento de la foto al pasar el cursor */
+.galeria-item:hover .imagen-marcador {
+    transform: scale(1.08);
+}
+
+/* Muestra la capa superpuesta al pasar el cursor */
+.galeria-item:hover .galeria-superposicion {
+    opacity: 1;
+}
+
+/* Contenido centrado dentro de la capa de galería */
+.galeria-superposicion .superposicion-contenido {
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Icono de expandir en galería */
+.galeria-superposicion .superposicion-contenido i {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Nombre de la categoría de galería */
+.galeria-superposicion .superposicion-contenido span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Banner sencillo y limpio con frase motivacional antes del pie de página */
+.banner-frase {
+    position: relative;
+    background: linear-gradient(95deg, #111613 0%, #1a241e 60%, #0d110f 100%);
+    padding: 88px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Disposición en dos columnas: frase limpia a la izquierda y visual del atleta a la derecha */
+.banner-frase-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Bloque tipográfico minimalista de la cita */
+.banner-cita {
+    max-width: 600px;
+}
+
+/* Texto de la frase motivacional con tipografía ligera y elegante */
+.cita-texto {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 300;
+    line-height: 1.45;
+    color: #f8fafc;
+    margin-bottom: 18px;
+}
+
+/* Firma o autor debajo de la frase */
+.cita-autor {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #FCD116;
+    margin-bottom: 14px;
+}
+
+/* Pequeña línea decorativa debajo del autor */
+.cita-linea {
+    display: block;
+    width: 38px;
+    height: 2px;
+    background: #2E7D32;
+}
+
+/* Espacio derecho reservado para una foto limpia del luchador */
+.banner-visual {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(46, 125, 50, 0.22) 0%, transparent 72%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.16);
+    font-size: 6rem;
+    flex-shrink: 0;
+}
+
+/* Pie de página clásico de 4 columnas con apartado de Patrocinadores Oficiales */
+.pie-pagina {
+    background: #144d29;
+    color: #ffffff;
+}
+
+/* Cuadrícula principal del pie de página en 4 columnas */
+.pie-contenido {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    padding: 56px 0 40px;
+}
+
+/* Enlace del logotipo dentro del pie de página */
+.pie-marca .pie-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
+
+/* Caja oscura con el icono amarillo del escudo en el pie */
+.pie-marca .pie-logo-icono {
+    width: 42px;
+    height: 42px;
+    background: #0d1210;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #FCD116;
+}
+
+/* Nombre de la liga en el pie de página */
+.pie-marca .pie-logo-texto {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+/* Descripción corta debajo del logo en el pie */
+.pie-marca .pie-descripcion {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Fila de botones sociales en la primera columna del pie */
+.pie-redes {
+    display: flex;
+    gap: 10px;
+}
+
+/* Botón cuadrado redondeado de red social */
+.pie-redes a {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* Resalta en amarillo Colombia al pasar el cursor por las redes del pie */
+.pie-redes a:hover {
+    background: #FCD116;
+    color: #161b22;
+    border-color: #FCD116;
+}
+
+/* Título de cada columna de enlaces en el pie */
+.pie-columna h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    color: #ffffff;
+    margin-bottom: 18px;
+}
+
+/* Lista vertical de enlaces en el pie */
+.pie-columna ul {
+    list-style: none;
+}
+
+/* Separación vertical entre enlaces del pie */
+.pie-columna ul li {
+    margin-bottom: 10px;
+}
+
+/* Estilo de los enlaces dentro de las columnas del pie */
+.pie-columna ul li a {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+/* Color amarillo al pasar el cursor sobre los enlaces del pie */
+.pie-columna ul li a:hover {
+    color: #FCD116;
+}
+
+/* Fila individual de dirección, teléfono o correo en el pie */
+.pie-contacto-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+/* Iconos amarillos en la columna de contacto */
+.pie-contacto-item i {
+    color: #FCD116;
+    margin-top: 3px;
+    width: 16px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* Texto de contacto en el pie */
+.pie-contacto-item span {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.4;
+}
+
+/* Franja dedicada para mostrar los logos de los Patrocinadores Oficiales */
+.pie-patrocinadores {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 28px 0;
+}
+
+/* Título gris claro de Patrocinadores Oficiales como en la referencia */
+.patrocinadores-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.68);
+    margin-bottom: 18px;
+}
+
+/* Fila horizontal para ubicar los logotipos de los patrocinadores */
+.patrocinadores-lista {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+/* Espacio limpio reservado para cada logo de patrocinador */
+.patrocinador-espacio {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 10px 18px;
+    border: 1px dashed rgba(255, 255, 255, 0.28);
+    border-radius: 8px;
+}
+
+/* Franja inferior con derechos de autor y políticas */
+.pie-inferior {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Texto legal de la franja inferior */
+.pie-inferior p {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Enlaces legales de la franja inferior */
+.pie-inferior a {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+/* Color amarillo al pasar el cursor sobre los enlaces legales */
+.pie-inferior a:hover {
+    color: #FCD116;
+}
+
+/* Fondo oscuro detrás de la ventana modal de inicio de sesión */
+.modal-superposicion {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Muestra la ventana modal cuando tiene la clase activa */
+.modal-superposicion.activa {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tarjeta blanca centrada de la ventana modal */
+.modal-tarjeta {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Animación de entrada de la tarjeta modal */
+.modal-superposicion.activa .modal-tarjeta {
+    transform: translateY(0);
+}
+
+/* Botón X para cerrar el modal */
+.modal-cerrar {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #4a5568;
+    transition: all 0.25s ease;
+}
+
+/* Cambio de color en el botón X al pasar el cursor */
+.modal-cerrar:hover {
+    background: #e2e8f0;
+    color: #161b22;
+}
+
+/* Logo centrado arriba del formulario modal */
+.modal-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+/* Icono del logo dentro del modal */
+.modal-logo .modal-logo-icono {
+    width: 42px;
+    height: 42px;
+    background: #161b22;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #FCD116;
+}
+
+/* Texto del logo dentro del modal */
+.modal-logo .modal-logo-texto {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #161b22;
+    letter-spacing: 1px;
+}
+
+/* Título principal del modal */
+.modal-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: #161b22;
+    margin-bottom: 22px;
+}
+
+/* Oculta por defecto las vistas internas del modal */
+.modal-vista {
+    display: none;
+}
+
+/* Muestra únicamente la vista activa del modal */
+.modal-vista.activa {
+    display: block;
+}
+
+/* Enlace inferior dentro del modal para ir a recuperar contraseña */
+.modal-enlace-pie {
+    text-align: center;
+    margin-top: 16px;
+}
+
+/* Estilo del enlace de recuperar contraseña */
+.modal-enlace-pie a {
+    font-size: 0.82rem;
+    color: #2E7D32;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Subrayado al pasar el cursor en el enlace de recuperación */
+.modal-enlace-pie a:hover {
+    text-decoration: underline;
+}
+
+/* Botón de texto para regresar desde recuperación a iniciar sesión */
+.boton-volver-login {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: #4a5568;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/* Color verde al pasar el cursor sobre volver a iniciar sesión */
+.boton-volver-login:hover {
+    color: #2E7D32;
+}
+
+/* Menú de pantalla completa para dispositivos móviles */
+.menu-movil {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 22, 16, 0.98);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(18px);
+}
+
+/* Muestra el menú móvil cuando está activo */
+.menu-movil.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Enlaces del menú móvil */
+.menu-movil a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    padding: 8px 20px;
+    transition: color 0.25s ease;
+}
+
+/* Resalta en verde los enlaces del menú móvil */
+.menu-movil a:hover {
+    color: #4caf50;
+}
+
+/* Botón de iniciar sesión dentro del menú móvil */
+.menu-movil .boton-login-movil {
+    margin-top: 18px;
+    padding: 14px 36px;
+    background: #2E7D32;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+/* Botón flotante para volver al inicio de la página */
+.boton-subir {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 46px;
+    height: 46px;
+    background: #2E7D32;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(46, 125, 50, 0.4);
+}
+
+/* Muestra el botón flotante cuando el usuario baja más de 500 píxeles */
+.boton-subir.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Efecto hover del botón para subir */
+.boton-subir:hover {
+    background: #1b5e20;
+    transform: translateY(-3px);
+}
+
+/* Estado inicial oculto para los elementos que se animan al entrar en pantalla */
+[data-animar] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Estado visible una vez que el elemento aparece en pantalla */
+[data-animar].animado {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación desde la izquierda */
+[data-animar="derecha"] {
+    transform: translateX(-28px);
+}
+
+/* Posición final de la animación desde la izquierda */
+[data-animar="derecha"].animado {
+    transform: translateX(0);
+}
+
+/* Animación desde la derecha */
+[data-animar="izquierda"] {
+    transform: translateX(28px);
+}
+
+/* Posición final de la animación desde la derecha */
+[data-animar="izquierda"].animado {
+    transform: translateX(0);
+}
+
+/* Animación de escala suave para tarjetas de galería */
+[data-animar="escala"] {
+    transform: scale(0.95);
+}
+
+/* Posición final de la animación de escala */
+[data-animar="escala"].animado {
+    transform: scale(1);
+}
+
+/* Retrasos escalonados para que las tarjetas aparezcan una tras otra */
+[data-retraso="1"] {
+    transition-delay: 0.08s;
+}
+
+[data-retraso="2"] {
+    transition-delay: 0.16s;
+}
+
+[data-retraso="3"] {
+    transition-delay: 0.24s;
+}
+
+[data-retraso="4"] {
+    transition-delay: 0.32s;
+}
+
+[data-retraso="5"] {
+    transition-delay: 0.40s;
+}
+
+[data-retraso="6"] {
+    transition-delay: 0.48s;
+}
+
+/* Estilo base para los espacios reservados donde irán las fotografías reales */
+.imagen-marcador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.16);
+    font-size: 2rem;
+}
+
+/* Adaptación para pantallas medianas y tabletas */
+@media (max-width: 1100px) {
+
+    /* Oculta el menú horizontal en tabletas para mostrar el botón móvil */
+    .enlaces-navegacion {
+        display: none;
+    }
+
+    /* Muestra el botón de menú móvil */
+    .boton-menu-movil {
+        display: flex;
+    }
+
+    /* Apila el contenido de portada y el tablero de cuenta regresiva */
+    .portada-contenedor {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Ajusta el ancho de la cabecera de Nosotros a una columna */
+    .nosotros-cabecera {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* Reduce a dos columnas las cuadrículas principales */
+    .sedes-cuadricula,
+    .deportistas-cuadricula,
+    .eventos-cuadricula,
+    .torneos-cuadricula,
+    .novedades-cuadricula,
+    .profesores-cuadricula {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Reduce Inscripciones a una sola columna */
+    .inscripciones-cuadricula {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajusta el pie de página a dos columnas */
+    .pie-contenido {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Adaptación para pantallas de celular */
+@media (max-width: 768px) {
+
+    /* Reduce el tamaño de títulos en celulares */
+    .titulo-seccion {
+        font-size: 2.1rem;
+    }
+
+    /* Reduce el título de portada en celulares */
+    .portada-titulo {
+        font-size: 2.7rem;
+    }
+
+    /* Ajusta el recuadro de cuenta regresiva al ancho disponible */
+    .tarjeta-cuenta-regresiva {
+        width: 100%;
+        padding: 18px;
+    }
+
+    /* Centra el tablero de dígitos en pantallas pequeñas */
+    .tablero-flip {
+        justify-content: space-between;
+    }
+
+    /* Reduce ligeramente el tamaño de cada dígito en celular */
+    .tarjeta-digito {
+        width: 28px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    /* Pasa los pilares y tarjetas a una sola columna en celular */
+    .nosotros-pilares,
+    .sedes-cuadricula,
+    .deportistas-cuadricula,
+    .eventos-cuadricula,
+    .torneos-cuadricula,
+    .novedades-cuadricula,
+    .profesores-cuadricula,
+    .pie-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    /* Organiza la galería en dos columnas en celular */
+    .galeria-cuadricula {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Quita la altura doble de la primera foto de galería en celular */
+    .galeria-item:nth-child(1) {
+        grid-row: span 1;
+    }
+
+    /* Iguala la altura mínima de la primera foto en celular */
+    .galeria-item:nth-child(1) .imagen-marcador {
+        min-height: 200px;
+    }
+
+    /* Apila el banner de frase motivacional en celular */
+    .banner-frase-contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Centra la línea decorativa de la cita en celular */
+    .cita-linea {
+        margin: 0 auto;
+    }
+
+    /* Reduce el tamaño del texto de la cita en celular */
+    .cita-texto {
+        font-size: 1.45rem;
+    }
+
+    /* Apila las cabeceras con enlace lateral */
+    .sedes-cabecera,
+    .deportistas-cabecera,
+    .eventos-cabecera,
+    .torneos-subcabecera,
+    .novedades-cabecera {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    /* Centra la franja legal del pie en celular */
+    .pie-inferior {
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Reduce el relleno del menú superior en celular */
+    .barra-navegacion {
+        padding: 0 18px;
+    }
+}
